@@ -650,7 +650,6 @@ GameObject:
   - component: {fileID: 1233461633}
   - component: {fileID: 1233461634}
   - component: {fileID: 1233461636}
-  - component: {fileID: 1233461635}
   m_Layer: 0
   m_Name: Input Player
   m_TagString: Untagged
@@ -700,7 +699,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1233461635}
+      - m_Target: {fileID: 1609504957}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: InputPlayer
         m_Mode: 0
@@ -775,20 +774,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 879580513}
---- !u!114 &1233461635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1233461632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1f2dbb91bd15f94eae662e339a7ef32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  InputValue: {x: 0, y: 0}
 --- !u!114 &1233461636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -995,6 +980,7 @@ GameObject:
   - component: {fileID: 1609504953}
   - component: {fileID: 1609504952}
   - component: {fileID: 1609504956}
+  - component: {fileID: 1609504957}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1117,6 +1103,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1609504957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609504951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1f2dbb91bd15f94eae662e339a7ef32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  InputValue: {x: 0, y: 0}
 --- !u!1 &1804336141
 GameObject:
   m_ObjectHideFlags: 0

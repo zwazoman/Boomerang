@@ -448,11 +448,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2058301951206820026, guid: 576bde559ab00d74b8ff9e4296789803, type: 3}
       propertyPath: goSpeed
-      value: 2
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 2058301951206820026, guid: 576bde559ab00d74b8ff9e4296789803, type: 3}
       propertyPath: boomTime
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2058301951206820026, guid: 576bde559ab00d74b8ff9e4296789803, type: 3}
+      propertyPath: comeBackSpeed
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5941078918155450006, guid: 576bde559ab00d74b8ff9e4296789803, type: 3}
       propertyPath: m_Name

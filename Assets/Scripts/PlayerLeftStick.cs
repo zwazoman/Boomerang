@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class PlayerLeftStick : MonoBehaviour
 {
     [SerializeField]
-    public float speed;
+    protected float speed;
     [SerializeField]
-    public Vector2 InputValue;
+    protected Vector2 InputValue;
 
     public void OnInputPlayer(InputAction.CallbackContext _context)
     {

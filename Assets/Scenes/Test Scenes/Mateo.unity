@@ -805,7 +805,19 @@ MonoBehaviour:
     m_ActionId: c11b46ce-6da2-40ab-898a-a19a79ea2ce4
     m_ActionName: Player/Move[/XInputControllerWindows/leftStick]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1609504958}
+        m_TargetAssemblyTypeName: PlayerRightStick, Assembly-CSharp
+        m_MethodName: RotationPlayer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: ffd167a3-be0c-4f3b-a175-ead398b493b0
     m_ActionName: Player/Viser[/XInputControllerWindows/rightStick]
   - m_PersistentCalls:
@@ -813,19 +825,7 @@ MonoBehaviour:
     m_ActionId: f4f91d9b-9d0c-4e9f-960e-c24f5c432883
     m_ActionName: Player/Lancer[/XInputControllerWindows/rightTrigger]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1609504951}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 5252acac-f5ad-470f-b423-c48264467b1b
     m_ActionName: Player/Join[/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
@@ -1131,6 +1131,7 @@ GameObject:
   - component: {fileID: 1609504952}
   - component: {fileID: 1609504956}
   - component: {fileID: 1609504957}
+  - component: {fileID: 1609504958}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1267,6 +1268,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   InputValue: {x: 0, y: 0}
+--- !u!114 &1609504958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609504951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91220c03a14d8534e861405b64275b93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Input_Value_Rotation: {x: 0, y: 0}
+  sensibility: 5
 --- !u!1 &1637215691
 GameObject:
   m_ObjectHideFlags: 0

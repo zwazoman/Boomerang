@@ -8,7 +8,6 @@ public class testBoomerang : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] float goSpeed = 10;
     [SerializeField] float comeBackSpeed;
-    [SerializeField] Camera mainCamera;
     [SerializeField] float boomTime;
     Vector3 backSpot;
     Vector3 target;
@@ -17,12 +16,10 @@ public class testBoomerang : MonoBehaviour
     {
         player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody>();
-        mainCamera = Camera.main;
     }
     
     private IEnumerator Start()
     {
-        target = new Vector3(10, 0, 0);
         rb.AddForce(transform.forward * goSpeed);
         yield return new WaitForSeconds(boomTime);
         rb.AddForce(-transform.forward * goSpeed);
@@ -36,14 +33,14 @@ public class testBoomerang : MonoBehaviour
     }
     private void Update()
     {
-        if(transform.position == backSpot)
+        /*if(transform.position == backSpot)
         {
             rb.useGravity = true;
-        }
+        }*/
         //rb.AddForce(transform.forward * goSpeed); // * Time.deltaTime;
     }
     private void OnCollisionEnter(Collision collision)
     {
-        collision.gameObject.SendMessage("BoomerangTouched");
+       // collision.gameObject.SendMessage("BoomerangTouched");
     }
 }

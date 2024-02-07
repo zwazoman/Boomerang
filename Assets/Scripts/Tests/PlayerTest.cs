@@ -9,7 +9,7 @@ public class PlayerTest : MonoBehaviour
     {
         if (Input.GetKeyDown("e"))
         {
-            Instantiate(boomerang, transform.forward, Quaternion.identity);
+            Instantiate(boomerang, transform.position, Quaternion.identity);
         }
     }
 }

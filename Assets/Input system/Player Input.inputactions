@@ -62,7 +62,7 @@
                 {
                     "name": "Pause",
                     "type": "Button",
-                    "id": "c2188421-0728-448f-b28d-36b067437cd6",
+                    "id": "f4f28d07-93a9-4443-9c16-118f58fe6bb3",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -138,11 +138,11 @@
                 },
                 {
                     "name": "",
-                    "id": "6c6cf99e-dcf0-414e-947f-7327b1cb6fca",
-                    "path": "",
+                    "id": "c142856e-7ca2-4e30-9ae4-c57565b0bf95",
+                    "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -154,18 +154,18 @@
             "id": "76bf2970-1300-49ea-89c2-4f2c1f071f4a",
             "actions": [
                 {
-                    "name": "Pause",
+                    "name": "Accept",
                     "type": "Button",
-                    "id": "b9e98b42-0209-412a-8b0b-21527b221ede",
+                    "id": "f8ef1f12-1bf6-4f94-9343-0699fb005f8f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Accept",
+                    "name": "Close pause",
                     "type": "Button",
-                    "id": "f8ef1f12-1bf6-4f94-9343-0699fb005f8f",
+                    "id": "71e83835-cbb2-441f-94ee-92a68b298d82",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -175,23 +175,23 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "293c22c4-c3cb-4ec1-aec3-64ec6ae638f7",
-                    "path": "<Gamepad>/start",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Pause",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "6b754727-7a98-4f18-9cbd-9368fbc83433",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Accept",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "07a9cf8b-a5c1-47c9-836a-da8622a64652",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Close pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

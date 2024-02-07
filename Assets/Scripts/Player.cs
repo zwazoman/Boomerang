@@ -4,11 +4,11 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private float speed;
+    public float speed;
     [SerializeField]
     public Vector2 InputValue;
 
-    public void InputPlayer(InputAction.CallbackContext _context)
+    public void OnInputPlayer(InputAction.CallbackContext _context)
     {
         InputValue = _context.ReadValue<Vector2>();
     }

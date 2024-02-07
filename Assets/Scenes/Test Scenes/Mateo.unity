@@ -648,8 +648,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1233461633}
-  - component: {fileID: 1233461634}
   - component: {fileID: 1233461636}
+  - component: {fileID: 1233461637}
   m_Layer: 0
   m_Name: Input Player
   m_TagString: Untagged
@@ -672,7 +672,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1233461634
+--- !u!114 &1233461636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233461632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90644779beb82824486df03a0fe323b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerInput: {fileID: 1233461637}
+  panel_pause: {fileID: 1853624425}
+--- !u!114 &1233461637
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -701,7 +715,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1609504957}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: InputPlayer
+        m_MethodName: OnInputPlayer
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -712,43 +726,31 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: c11b46ce-6da2-40ab-898a-a19a79ea2ce4
-    m_ActionName: Player/Move
+    m_ActionName: Player/Move[/XInputControllerWindows/leftStick]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: ffd167a3-be0c-4f3b-a175-ead398b493b0
-    m_ActionName: Player/Viser
+    m_ActionName: Player/Viser[/XInputControllerWindows/rightStick]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: f4f91d9b-9d0c-4e9f-960e-c24f5c432883
-    m_ActionName: Player/Lancer
+    m_ActionName: Player/Lancer[/XInputControllerWindows/rightTrigger]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 5252acac-f5ad-470f-b423-c48264467b1b
-    m_ActionName: Player/Join
+    m_ActionName: Player/Join[/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: bc9442ea-f27b-41be-8cd6-742a0bf5b3ad
-    m_ActionName: Player/Dash
+    m_ActionName: Player/Dash[/XInputControllerWindows/leftShoulder]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 225d4bf0-8dd2-4481-9425-e166bbeec4ea
-    m_ActionName: Player/Hit
+    m_ActionName: Player/Hit[/XInputControllerWindows/rightShoulder]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1233461636}
-        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
-        m_MethodName: OnPause
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: b9e98b42-0209-412a-8b0b-21527b221ede
-    m_ActionName: UI/Pause
+      m_Calls: []
+    m_ActionId: f8ef1f12-1bf6-4f94-9343-0699fb005f8f
+    m_ActionName: UI/Accept[/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1233461636}
@@ -763,30 +765,29 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: f8ef1f12-1bf6-4f94-9343-0699fb005f8f
-    m_ActionName: UI/Accept
+    m_ActionId: 71e83835-cbb2-441f-94ee-92a68b298d82
+    m_ActionName: UI/Close pause[/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: c2188421-0728-448f-b28d-36b067437cd6
-    m_ActionName: Player/Pause
+      m_Calls:
+      - m_Target: {fileID: 1233461636}
+        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f4f28d07-93a9-4443-9c16-118f58fe6bb3
+    m_ActionName: Player/Pause1[/XInputControllerWindows/start]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 879580513}
---- !u!114 &1233461636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1233461632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90644779beb82824486df03a0fe323b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel_pause: {fileID: 1853624425}
 --- !u!1 &1250369603
 GameObject:
   m_ObjectHideFlags: 0

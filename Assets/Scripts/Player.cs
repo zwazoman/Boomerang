@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float speed;
     [SerializeField]
-    private Vector2 InputValue;
+    public Vector2 InputValue;
 
     public void InputPlayer(InputAction.CallbackContext _context)
     {

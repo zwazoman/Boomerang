@@ -336,6 +336,7 @@ MonoBehaviour:
   boomerang: {fileID: 5941078918155450006, guid: 576bde559ab00d74b8ff9e4296789803, type: 3}
   boomerangTMP: {fileID: 0}
   hasBoomerang: 1
+  distanceToInstantiate: 2
 --- !u!1 &1957917266
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,6 +372,7 @@ MonoBehaviour:
   boomerang: {fileID: 5941078918155450006, guid: 576bde559ab00d74b8ff9e4296789803, type: 3}
   boomerangTMP: {fileID: 0}
   hasBoomerang: 1
+  distanceToInstantiate: 0
 --- !u!65 &1957917268
 BoxCollider:
   m_ObjectHideFlags: 0

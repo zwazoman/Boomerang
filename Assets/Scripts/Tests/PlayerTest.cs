@@ -6,8 +6,8 @@ public class PlayerTest : MonoBehaviour
 {
     public GameObject boomerang;
     public GameObject boomerangTMP;
-    private testBoomerang test;
-    public bool hasBoomerang = true;
+    private testBoomerang test; // a renommer
+    public bool hasBoomerang = true; // le joueur a un boomerang ou non
     public float distanceToInstantiate;
     void Update()
     {
@@ -15,26 +15,29 @@ public class PlayerTest : MonoBehaviour
         {
             if (Input.GetKeyDown("e"))
             {
-                print("lance !");
-                boomerangTMP = Instantiate(boomerang,transform.position + transform.forward * distanceToInstantiate, transform.rotation);
-                test = boomerangTMP.GetComponent<testBoomerang>();
-                test.player = this.gameObject;
+                print("lance !"); // a retirer
+                boomerangTMP = Instantiate(boomerang,transform.position + transform.forward * distanceToInstantiate, transform.rotation); // instanciation du boomerang
+                test = boomerangTMP.GetComponent<testBoomerang>(); // a renommer 
+                test.thrower = this.gameObject;
                 hasBoomerang = false;
             }
         }  
     }
     public void ScoreUp()
     {
-        print("AUGMENTE LE SCORE");
+        // augmente le score quand le message "ScoreUp()" est reçu
+        print("AUGMENTE LE SCORE"); // a retirer
     }
 
-    void PickUp()
+    public void PickUp()
     {
-        print("RAMASSE");
+        // ramasse le boomerang quand le message "PickUp()" est reçu
+        print("RAMASSE"); // a retirer
         hasBoomerang = true;
     }
-    void Kill()
+    public void Kill()
     {
+        // détruit le joueur quand "Kill()" est reçu
         Destroy(gameObject);
     }
 }

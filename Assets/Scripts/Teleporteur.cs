@@ -20,12 +20,12 @@ public class Teleporteur : MonoBehaviour
     {
         if (canTp == false)
         {
-            targetTp.SetActive(false);
+            tpCollider.enabled = false;
         }
         else if (canTp == true)
-                {
-                targetTp.SetActive(true);
-                }
+        {
+            tpCollider.enabled = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other)

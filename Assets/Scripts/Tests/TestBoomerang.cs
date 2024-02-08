@@ -10,6 +10,7 @@ public class testBoomerang : MonoBehaviour
     [SerializeField] float comeBackSpeed;
     [SerializeField] Camera mainCamera;
     [SerializeField] float boomTime;
+    Vector3 backSpot;
     Vector3 target;
 
     private void Awake()
@@ -18,13 +19,14 @@ public class testBoomerang : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
     }
+    
     private IEnumerator Start()
     {
         target = new Vector3(10, 0, 0);
         rb.AddForce(transform.forward * goSpeed);
         yield return new WaitForSeconds(boomTime);
         rb.AddForce(-transform.forward * goSpeed);
-        Vector3 backSpot = player.transform.position;
+        backSpot = player.transform.position;
         Vector3 backDirection = backSpot - transform.position;
         rb.AddForce((player.transform.position - transform.position).normalized * comeBackSpeed);
         
@@ -34,6 +36,14 @@ public class testBoomerang : MonoBehaviour
     }
     private void Update()
     {
+        if(transform.position == backSpot)
+        {
+            rb.useGravity = true;
+        }
         //rb.AddForce(transform.forward * goSpeed); // * Time.deltaTime;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        collision.gameObject.SendMessage("BoomerangTouched");
     }
 }

@@ -7,12 +7,9 @@ public class joinDuringGame : MonoBehaviour
     public List<GameObject> playerWithoutController;
     public List<GameObject> playerWithController;
     public List<GameObject> spawnPoint;
-    public GameObject lastPlayerEnter;
 
-    public void OnJoin(InputAction.CallbackContext _context)
+    public Player OnJoin()
     {
-        if (_context.started)
-        {
             Debug.Log("Joining");
             if (playerWithoutController.Count > 0)
             {
@@ -21,8 +18,8 @@ public class joinDuringGame : MonoBehaviour
                 playerWithController.Add(PlayerEntering);
                 PlayerEntering.SetActive(true);
                 PlayerEntering.transform.position = spawnPoint[Random.Range(0, spawnPoint.Count)].transform.position;
-                lastPlayerEnter = PlayerEntering;
+            return PlayerEntering.GetComponent<Player>();
             }
-        }
+        return null;
     }
 }

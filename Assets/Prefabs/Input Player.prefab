@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1684004948597950217}
   - component: {fileID: 563620364688310638}
   - component: {fileID: 2927115177237299115}
+  - component: {fileID: 4268673229631918137}
   m_Layer: 0
   m_Name: Input Player
   m_TagString: Untagged
@@ -60,8 +61,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2927115177237299115}
-        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
+      - m_Target: {fileID: 4268673229631918137}
+        m_TargetAssemblyTypeName: Player_Input, Assembly-CSharp
         m_MethodName: OnInputPlayer
         m_Mode: 0
         m_Arguments:
@@ -142,6 +143,18 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f4f28d07-93a9-4443-9c16-118f58fe6bb3
     m_ActionName: Player/Pause1[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c94a987f-1d3d-44fc-8ccc-c8375113400f
+    m_ActionName: UI/Up[/XInputControllerWindows/leftStick/up]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 67a18703-a1eb-462c-8239-d4ce66435e52
+    m_ActionName: UI/Down[/XInputControllerWindows/leftStick/down]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b75d3d12-cc87-44a8-b604-9f1a291318fe
+    m_ActionName: UI/Quit[/XInputControllerWindows/buttonSouth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
@@ -161,5 +174,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInput: {fileID: 563620364688310638}
   panel_pause: {fileID: 0}
-  objectWhoGivePlayerInstance: {fileID: 0}
+  imageUp: {fileID: 0}
+  imageDown: {fileID: 0}
+--- !u!114 &4268673229631918137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6708251660742234360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1f2dbb91bd15f94eae662e339a7ef32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   player: {fileID: 0}
+  objectWhoGivePlayer: {fileID: 0}

@@ -5,11 +5,39 @@ using UnityEngine;
 public class PlayerTest : MonoBehaviour
 {
     public GameObject boomerang;
+    public GameObject boomerangTMP;
+    private testBoomerang test; // a renommer
+    public bool hasBoomerang = true; // le joueur a un boomerang ou non
+    public float distanceToInstantiate;
     void Update()
     {
-        if (Input.GetKeyDown("e"))
+        if (hasBoomerang)
         {
-            Instantiate(boomerang, transform.forward, Quaternion.identity);
-        }
+            if (Input.GetKeyDown("e"))
+            {
+                print("lance !"); // a retirer
+                boomerangTMP = Instantiate(boomerang,transform.position + transform.forward * distanceToInstantiate, transform.rotation); // instanciation du boomerang
+                test = boomerangTMP.GetComponent<testBoomerang>(); // a renommer 
+                test.thrower = this.gameObject;
+                hasBoomerang = false;
+            }
+        }  
+    }
+    public void ScoreUp()
+    {
+        // augmente le score quand le message "ScoreUp()" est reçu
+        print("AUGMENTE LE SCORE"); // a retirer
+    }
+
+    public void PickUp()
+    {
+        // ramasse le boomerang quand le message "PickUp()" est reçu
+        print("RAMASSE"); // a retirer
+        hasBoomerang = true;
+    }
+    public void Kill()
+    {
+        // détruit le joueur quand "Kill()" est reçu
+        Destroy(gameObject);
     }
 }

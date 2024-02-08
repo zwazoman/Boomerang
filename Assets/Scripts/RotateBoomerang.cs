@@ -5,26 +5,17 @@ using UnityEngine;
 public class RotateBoomerang : MonoBehaviour
 {
     public float rotationPower;
+    public testBoomerang test;
+    bool isGrounded;
+    private void Awake()
+    {
+        isGrounded = transform.parent.GetComponent<testBoomerang>().IsGrounded();
+    }
     void Update()
     {
-        if (!IsGrounded())
+        if (!isGrounded)
         {
         transform.Rotate(Vector3.forward * rotationPower * Time.deltaTime, Space.Self);
         }
-
-
-    }
-    bool IsGrounded()
-    {
-        if (transform.parent.position.y <= 1)
-        {
-            return true;
-        }
-        return false;
-    }
-
-    void BoomerangTouched()
-    {
-
     }
 }

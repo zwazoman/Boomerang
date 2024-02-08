@@ -14,7 +14,6 @@ public class Player_Input : MonoBehaviour
 
     public void OnInputPlayer(InputAction.CallbackContext _context)
     {
-        Debug.Log(_context.ReadValue<Vector2>());
         player.InputValue = _context.ReadValue<Vector2>();
     }
 

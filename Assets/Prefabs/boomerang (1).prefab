@@ -198,4 +198,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationPower: 1000
-  test: {fileID: 0}
+  boomerang: {fileID: 5941078918155450006}

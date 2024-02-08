@@ -16,11 +16,12 @@ public class testBoomerang : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        playerScript = player.GetComponent<PlayerTest>();
+        //playerScript = player.GetComponent<PlayerTest>();
     }
     
     private IEnumerator Start()
     {
+        playerScript = player.GetComponent<PlayerTest>();
         rb.AddForce(transform.forward * goSpeed);
         yield return new WaitForSeconds(boomTime);
         rb.velocity = Vector3.zero;

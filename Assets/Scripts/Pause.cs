@@ -1,8 +1,5 @@
-using System.Data;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Windows;
 
 public class Pause : MonoBehaviour
 {

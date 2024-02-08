@@ -46,8 +46,10 @@ public class Pause : MonoBehaviour
 
     public void Quit(InputAction.CallbackContext _context)
     {
+        Debug.Log("A");
         if (_context.action.triggered && _context.action.name == "Quit")
         {
+            Debug.Log(_context.action.triggered);
             Application.Quit();
         }
     }

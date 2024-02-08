@@ -8,11 +8,24 @@ public class Teleporteur : MonoBehaviour
     private GameObject player;
     public float timeDisable;
     private Collider tpCollider;
-
+    private bool canTp;
     private void Awake()
     {
         player = GameObject.FindWithTag("Player");
         tpCollider = targetTp.GetComponent<Collider>();
+        canTp = true;
+    }
+
+    private void Update()
+    {
+        if (canTp == false)
+        {
+            targetTp.SetActive(false);
+        }
+        else if (canTp == true)
+                {
+                targetTp.SetActive(true);
+                }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -21,14 +34,27 @@ public class Teleporteur : MonoBehaviour
         {
             player.transform.position = targetTp.transform.position;
             Debug.Log("tp");
-            //targetTp.SetActive(false);
-            StartCoroutine(ColliderDisable());
+            
+            //StartCoroutine(ColliderDisable());
+            canTp = false;
         }
     }
-    IEnumerator ColliderDisable()
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            
+            Debug.Log("tpActive");
+            
+            //StartCoroutine(ColliderDisable());
+            canTp = true;
+        }
+    }
+    /*IEnumerator ColliderDisable()
     {
         tpCollider.enabled = false;
         yield return new WaitForSeconds(timeDisable);
         tpCollider.enabled = true;
-    }
+    }*/
 }

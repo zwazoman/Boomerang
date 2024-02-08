@@ -9,6 +9,13 @@ public class Pause : MonoBehaviour
     private PlayerInput _playerInput;
     [SerializeField]
     private GameObject panel_pause;
+    public GameObject objectWhoGivePlayerInstance;
+    public Player player;
+
+    private void Start()
+    {
+        player = objectWhoGivePlayerInstance.GetComponent<joinDuringGame>().lastPlayerEnter.GetComponent<Player>();
+    }
 
     public void OnPause(InputAction.CallbackContext _context)
     {
@@ -24,6 +31,10 @@ public class Pause : MonoBehaviour
         _playerInput.SwitchCurrentActionMap("Player");
         Time.timeScale = 1;
         panel_pause.SetActive(false);
+    }
+    public void OnInputPlayer(InputAction.CallbackContext _context)
+    {
+        player.InputValue = _context.ReadValue<Vector2>();
     }
 
 }

@@ -8,10 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     public Vector2 InputValue;
 
-    public void OnInputPlayer(InputAction.CallbackContext _context)
-    {
-        InputValue = _context.ReadValue<Vector2>();
-    }
+
 
     private void Update()
     {

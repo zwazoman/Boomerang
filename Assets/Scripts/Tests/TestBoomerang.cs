@@ -10,12 +10,13 @@ public class testBoomerang : MonoBehaviour
     [SerializeField] float goSpeed = 10;
     [SerializeField] float comeBackSpeed;
     [SerializeField] float boomTime;
-    [SerializeField] float fallTime;
+    float fallTime;
     Vector3 backSpot;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        fallTime = boomTime * 1.1f;
         //playerScript = player.GetComponent<PlayerTest>();
     }
     

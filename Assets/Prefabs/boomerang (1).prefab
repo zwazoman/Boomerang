@@ -49,8 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goSpeed: 1000
   comeBackSpeed: 1000
-  boomTime: 1
-  fallTime: 1
+  boomTime: 0.8
 --- !u!54 &2000632256749283890
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -197,5 +196,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66ba70862d800e47a2f2b61d42f92a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationPower: 1000
+  rotationPower: 1250
   boomerang: {fileID: 5941078918155450006}

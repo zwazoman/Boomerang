@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class testBoomerang : MonoBehaviour
+public class ThrowBoomerang : MonoBehaviour
 {
     Rigidbody rb;
     internal GameObject thrower;
@@ -26,7 +26,7 @@ public class testBoomerang : MonoBehaviour
         Vector3 towardsPlayer = (thrower.transform.position - transform.position).normalized * comeBackSpeed; // calcul de la force du retour du boomerang vers la position du lanceur
         rb.AddForce(towardsPlayer); // retour du boomerang
         yield return new WaitForSeconds(fallTime); // attendre
-        rb.constraints = RigidbodyConstraints.FreezePositionY; //a marche pas ? / unfreeze la position en z du boomerang pour qu'il tombe au sol + ralentissement ?
+        rb.useGravity = true; //a marche pas ? / unfreeze la position en z du boomerang pour qu'il tombe au sol + ralentissement ?
     }
     
     public bool IsGrounded() 

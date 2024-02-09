@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     internal Vector2 InputValue;
     [SerializeField]
     internal Vector2 _context;
+    [SerializeField]
+    public PlayerBoomerang boomerangManager;
 
     private void Start()
     {

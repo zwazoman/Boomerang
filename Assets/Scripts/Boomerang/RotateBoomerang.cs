@@ -8,14 +8,9 @@ public class RotateBoomerang : MonoBehaviour
     public GameObject boomerang;
     void Update()
     {
-        if (!IsGrounded())
+        if (!boomerang.GetComponent<BoomerangBehaviour>().isGrounded)
         {
         transform.Rotate(Vector3.forward * rotationPower * Time.deltaTime, Space.Self);
         }
-    }
-    public bool IsGrounded()
-    {
-        if (transform.position.y <= 1) return true;
-        return false;
     }
 }

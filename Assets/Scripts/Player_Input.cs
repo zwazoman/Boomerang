@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class Player_Input : MonoBehaviour
 {
 
-    public Player player;
+    public Player player;//Référence au Script Player (c'est le PlayerBehaviour)
     public GameObject objectWhoGivePlayer;
 
     private void Start()

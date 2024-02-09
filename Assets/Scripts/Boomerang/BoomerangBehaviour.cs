@@ -6,9 +6,10 @@ public class BoomerangBehaviour : MonoBehaviour
 {
     Rigidbody rb;
     internal GameObject thrower;
-    [SerializeField] float goSpeed = 10;
+    [SerializeField] float goSpeed;
     [SerializeField] float comeBackSpeed;
     [SerializeField] float boomTime;
+    internal bool isGrounded = false;
     float fallTime;
 
     private void Awake()
@@ -27,24 +28,29 @@ public class BoomerangBehaviour : MonoBehaviour
         yield return new WaitForSeconds(fallTime); // attendre
         rb.useGravity = true; //a marche pas ? / unfreeze la position en z du boomerang pour qu'il tombe au sol + ralentissement ?
     }
-    
-    public bool IsGrounded() 
+    private void Update()
     {
-        // si le boomerang est en dessous de 1 de hauteur, il est considéré comme au sol
-        if (transform.position.y <= 1) return true;
-        return false;
+        if (Physics.Raycast(transform.position, -transform.up, 0.1f))
+        {
+            isGrounded = true;
+        }
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         // lorsque le boomerang touche une objet
-        if (collision.gameObject.tag == "Player")
+        GameObject objetTouche = collision.gameObject;
+        if (objetTouche.tag == "Player")
         {
             // vérifie si l 'objet est un joueur
-            if (collision.gameObject == thrower || IsGrounded())
+            if (objetTouche == thrower || isGrounded)
             {
                 // vérifie si le joueur est le lanceur OU si le boomerang est au sol et donc inoffenssif
-                collision.gameObject.SendMessage("PickUp");
-                Destroy(gameObject);
+                if (!objetTouche.GetComponent<PlayerBoomerang>().hasBoomerang)
+                {
+                    objetTouche.SendMessage("PickUp");
+                    Destroy(gameObject);
+                }
             }
             else
             {

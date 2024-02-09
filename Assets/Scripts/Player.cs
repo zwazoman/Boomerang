@@ -32,6 +32,11 @@ public class Player : MonoBehaviour
     public void Rotation()//Gère les contrôles du stick gauche
     {
         Vector2 input = _context;
+        input.Normalize();
+        if (input == new Vector2(0, 0))
+        {
+            return;
+        }
         float rotation = Mathf.Atan2(input.x, input.y) * Mathf.Rad2Deg;
         Quaternion targetRotation = Quaternion.Euler(0f, rotation, 0f);
         transform.rotation = targetRotation;

@@ -7,31 +7,29 @@ public class Player : MonoBehaviour
     [SerializeField]
     internal Vector2 InputValue;
     [SerializeField]
-    protected Vector2 Input_Value_Rotation;
-    [SerializeField]
-    protected float sensibility = 20f;
-    [SerializeField]
     internal Vector2 _context;
+    [SerializeField]
+    public PlayerBoomerang boomerangManager;
 
     private void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false; //Afin de cacher le curseur sur pc
+        Cursor.lockState = CursorLockMode.Locked; //Optionnel, bloque la souris au millieu de l'écran
     }
     private void Update()
     {
-        OnMove();
+        OnMove(); //Appelle à chaque frame la fct Update
     }
 
 
-    public void OnMove()
+    public void OnMove() //Gère les contrôles du stick droit
     {
         Vector3 mouvement = new Vector3(InputValue.x, 0, InputValue.y);
         mouvement.Normalize();
-        transform.position = transform.position + (speed * mouvement * Time.deltaTime);
+        transform.position = transform.position + (speed * mouvement * Time.deltaTime);//transform.position car il faut que les contrôles soit basé sur le world Space
     }
 
-    public void Rotation()
+    public void Rotation()//Gère les contrôles du stick gauche
     {
         Vector2 input = _context;
         float rotation = Mathf.Atan2(input.x, input.y) * Mathf.Rad2Deg;

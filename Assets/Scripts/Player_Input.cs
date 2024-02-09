@@ -4,8 +4,10 @@ using UnityEngine.InputSystem;
 public class Player_Input : MonoBehaviour
 {
 
-    public Player player;
+    public Player player;//Référence au Script Player (c'est le PlayerBehaviour)
     public GameObject objectWhoGivePlayer;
+    [SerializeField]
+    public PlayerBoomerang boomerangManager;
 
     private void Start()
     {
@@ -21,5 +23,10 @@ public class Player_Input : MonoBehaviour
     {
         player._context = _context.ReadValue<Vector2>();
         player.Rotation();
+    }
+
+    public void OnThrow(InputAction.CallbackContext _context)
+    {
+        player.boomerangManager.ThrowBoomerang();
     }
 }

@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.54, y: 6.91, z: -4.711847}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7389440498458856330}
@@ -47,10 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd7fad8b1c9e224d89e370696723dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goSpeed: 1000
-  comeBackSpeed: 1000
-  boomTime: 1
-  fallTime: 1
+  goSpeed: 500
+  comeBackSpeed: 500
+  boomTime: 0.7
 --- !u!54 &2000632256749283890
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -73,10 +72,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!65 &1569223492839514793
 BoxCollider:
@@ -197,5 +196,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66ba70862d800e47a2f2b61d42f92a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationPower: 1000
-  test: {fileID: 0}
+  rotationPower: 1250
+  boomerang: {fileID: 5941078918155450006}

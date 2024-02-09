@@ -6,7 +6,7 @@ public class PlayerTest : MonoBehaviour
 {
     public GameObject boomerang;
     public GameObject boomerangTMP;
-    private ThrowBoomerang throwScript; // a renommer
+    private BoomerangBehaviour throwScript; // a renommer
     public bool hasBoomerang = true; // le joueur a un boomerang ou non
     public float distanceToInstantiate;
     void Update()
@@ -17,7 +17,7 @@ public class PlayerTest : MonoBehaviour
             {
                 print("lance !"); // a retirer
                 boomerangTMP = Instantiate(boomerang,transform.position + transform.forward * distanceToInstantiate, transform.rotation); // instanciation du boomerang
-                throwScript = boomerangTMP.GetComponent<ThrowBoomerang>(); // a renommer 
+                throwScript = boomerangTMP.GetComponent<BoomerangBehaviour>(); // a renommer 
                 throwScript.thrower = this.gameObject;
                 hasBoomerang = false;
             }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class AssScore : MonoBehaviour
+public class AddScore : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI scoreJ1;

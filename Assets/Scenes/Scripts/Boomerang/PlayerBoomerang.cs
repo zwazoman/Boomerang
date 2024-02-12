@@ -28,8 +28,9 @@ public class PlayerBoomerang : MonoBehaviour
     internal void Dash()
     {
         if (!hasBoomerang)
-        { 
-            dashScript.Dash();
+        {
+            print("ALLEZ");
+            dashScript.StartCoroutine("Dash");
         }
     }
 

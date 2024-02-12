@@ -11,6 +11,7 @@ public class PlayerBoomerang : MonoBehaviour
     internal bool hasBoomerang = true; // le joueur a un boomerang ou non
     public float distanceToInstantiate;
     int score;
+    public GameObject objectWithPlayersLists;
     
     internal void ThrowBoomerang()
     {
@@ -53,6 +54,8 @@ public class PlayerBoomerang : MonoBehaviour
     public void Kill()
     {
         // détruit le joueur quand "Kill()" est reçu
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        objectWithPlayersLists.GetComponent<joinDuringGame>().playerWithController.Remove(gameObject);
+        objectWithPlayersLists.GetComponent<joinDuringGame>().playerWithoutController.Add(gameObject);
     }
 }

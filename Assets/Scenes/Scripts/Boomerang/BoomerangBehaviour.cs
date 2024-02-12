@@ -77,7 +77,6 @@ public class BoomerangBehaviour : MonoBehaviour
         }
         if(objetTouche.layer == 3)
         {
-            // si l'objet touché possède le layer "WALL" et est un mu
             FallBoomerang();
         }
     }

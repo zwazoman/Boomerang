@@ -9287,7 +9287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32196fe186703c4cb68ba66273eb7ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTp: {fileID: 1960665045200996818}
+  targetTp: {fileID: 1960665045200996819}
 --- !u!1001 &384762266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15873,6 +15873,18 @@ PrefabInstance:
     - target: {fileID: 3344794017740916678, guid: bac0d507564f60545929846f1251b6fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747567459459722949, guid: bac0d507564f60545929846f1251b6fd, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 5799701246675334690, guid: bac0d507564f60545929846f1251b6fd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 5799701246675334690, guid: bac0d507564f60545929846f1251b6fd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.36
       objectReference: {fileID: 0}
     - target: {fileID: 7282279356929891586, guid: bac0d507564f60545929846f1251b6fd, type: 3}
       propertyPath: m_Name
@@ -46210,7 +46222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32196fe186703c4cb68ba66273eb7ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTp: {fileID: 382399134}
+  targetTp: {fileID: 382399135}
 --- !u!1001 &2210741654967452670
 PrefabInstance:
   m_ObjectHideFlags: 0

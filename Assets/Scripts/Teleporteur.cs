@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class Teleporteur : MonoBehaviour
 {
-    public GameObject targetTp;
+    public Teleporteur targetTp;
     private GameObject player;
     private bool canTp;
+    private Vector3 targetTpPos;
     private void Awake()
     {
         player = GameObject.FindWithTag("Player");
         canTp = true;
+        targetTpPos = targetTp.transform.position;
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
+
             TeleportPlayer();
         }
     }
@@ -23,18 +26,18 @@ public class Teleporteur : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
-        {            
-            DontTeleportPlayer();
+        {            //DontTeleportPlayer();
+            if (!canTp)
+                canTp = true;
         }
     }
-
-   
+  
     private void TeleportPlayer()
     {
         if (canTp == true)
         {
-            canTp = false;
-            player.transform.position = targetTp.transform.position;
+            targetTp.canTp = false;
+            player.transform.position = targetTpPos;
             Debug.Log("tp");
         }
     }
@@ -44,7 +47,6 @@ public class Teleporteur : MonoBehaviour
         if (canTp == false)
         {
             Debug.Log("Desactivé");
-            canTp = true;
         }
     }
 }

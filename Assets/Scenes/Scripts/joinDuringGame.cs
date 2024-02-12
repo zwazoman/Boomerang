@@ -10,7 +10,6 @@ public class joinDuringGame : MonoBehaviour
 
     public Player OnJoin()
     {
-            Debug.Log("Joining");
             if (playerWithoutController.Count > 0)
             {
                 GameObject PlayerEntering = playerWithoutController[0];

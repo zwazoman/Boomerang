@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.54, y: 6.91, z: -4.711847}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 12, y: 12, z: 12}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1263321176149974276}
@@ -209,6 +209,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: cd20ded384cffde4b8e94764cc6ca003, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 575b8c94978fbb547b5204e89b252508, type: 2}
     - target: {fileID: 919132149155446097, guid: cd20ded384cffde4b8e94764cc6ca003, type: 3}
       propertyPath: m_Name
       value: Boomerang Graph

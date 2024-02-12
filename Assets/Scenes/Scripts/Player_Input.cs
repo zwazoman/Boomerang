@@ -30,4 +30,9 @@ public class Player_Input : MonoBehaviour
     {
         player.boomerangManager.ThrowBoomerang();
     }
+
+    public void OnDash(InputAction.CallbackContext _context)
+    {
+        player.boomerangManager.Dash();
+    }
 }

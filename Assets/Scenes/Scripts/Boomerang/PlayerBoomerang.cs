@@ -27,11 +27,8 @@ public class PlayerBoomerang : MonoBehaviour
     internal void Dash()
     {
         if (!hasBoomerang)
-        {
-            if (Input.GetKeyDown("e"))
-            {
-                dashScript.Dash();
-            }
+        { 
+            dashScript.Dash();
         }
     }
 

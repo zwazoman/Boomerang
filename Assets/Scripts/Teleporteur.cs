@@ -37,6 +37,7 @@ public class Teleporteur : MonoBehaviour
             
             //StartCoroutine(ColliderDisable());
             canTp = false;
+
         }
     }
 

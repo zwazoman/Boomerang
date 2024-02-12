@@ -6,9 +6,10 @@ public class PlayerBoomerang : MonoBehaviour
 {
     public GameObject boomerang;
     public GameObject boomerangTMP;
-    private BoomerangBehaviour boomScript; // a renommer
+    BoomerangBehaviour boomScript; // a renommer
     public bool hasBoomerang = true; // le joueur a un boomerang ou non
     public float distanceToInstantiate;
+    int score;
     
     internal void ThrowBoomerang()
     {
@@ -21,12 +22,17 @@ public class PlayerBoomerang : MonoBehaviour
             hasBoomerang = false;
         }
     }
-            
 
     public void ScoreUp()
     {
         // augmente le score quand le message "ScoreUp()" est reçu
         print("AUGMENTE LE SCORE"); // a retirer
+        score += 1;
+        if (score == 5)
+        {
+            gameObject.transform.localScale *= 10;
+            Time.timeScale = 0;
+        }
     }
 
     public void PickUp()

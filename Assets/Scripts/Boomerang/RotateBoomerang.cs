@@ -8,7 +8,7 @@ public class RotateBoomerang : MonoBehaviour
     public GameObject boomerang;
     void Update()
     {
-        if (!boomerang.GetComponent<BoomerangBehaviour>().isGrounded)
+        if (!boomerang.GetComponent<BoomerangBehaviour>().isFalling)
         {
         transform.Rotate(Vector3.forward * rotationPower * Time.deltaTime, Space.Self);
         }

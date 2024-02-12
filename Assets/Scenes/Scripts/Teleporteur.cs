@@ -4,58 +4,49 @@ using UnityEngine;
 
 public class Teleporteur : MonoBehaviour
 {
-    public GameObject targetTp;
+    public Teleporteur targetTp;
     private GameObject player;
-    public float timeDisable;
-    private Collider tpCollider;
     private bool canTp;
+    private Vector3 targetTpPos;
     private void Awake()
     {
         player = GameObject.FindWithTag("Player");
-        tpCollider = targetTp.GetComponent<Collider>();
         canTp = true;
+        targetTpPos = targetTp.transform.position;
     }
-
-    private void Update()
-    {
-        if (canTp == false)
-        {
-            tpCollider.enabled = false;
-        }
-        else if (canTp == true)
-        {
-            tpCollider.enabled = true;
-        }
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            player.transform.position = targetTp.transform.position;
-            Debug.Log("tp");
-            
-            //StartCoroutine(ColliderDisable());
-            canTp = false;
 
+            TeleportPlayer();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
-        {
-            
-            Debug.Log("tpActive");
-            
-            //StartCoroutine(ColliderDisable());
-            canTp = true;
+        {            //DontTeleportPlayer();
+            if (!canTp)
+                canTp = true;
         }
     }
-    /*IEnumerator ColliderDisable()
+  
+    private void TeleportPlayer()
     {
-        tpCollider.enabled = false;
-        yield return new WaitForSeconds(timeDisable);
-        tpCollider.enabled = true;
-    }*/
+        if (canTp == true)
+        {
+            targetTp.canTp = false;
+            player.transform.position = targetTpPos;
+            Debug.Log("tp");
+        }
+    }
+
+    private void DontTeleportPlayer()
+    {
+        if (canTp == false)
+        {
+            Debug.Log("Desactivé");
+        }
+    }
 }

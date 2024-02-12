@@ -125,7 +125,19 @@ MonoBehaviour:
     m_ActionId: 5252acac-f5ad-470f-b423-c48264467b1b
     m_ActionName: Player/Join[/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4268673229631918137}
+        m_TargetAssemblyTypeName: Player_Input, Assembly-CSharp
+        m_MethodName: OnDash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: bc9442ea-f27b-41be-8cd6-742a0bf5b3ad
     m_ActionName: Player/Dash[/XInputControllerWindows/leftShoulder]
   - m_PersistentCalls:
@@ -229,6 +241,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boomerang: {fileID: 5941078918155450006, guid: 576bde559ab00d74b8ff9e4296789803, type: 3}
-  boomerangTMP: {fileID: 0}
-  hasBoomerang: 1
+  dashScript: {fileID: 0}
   distanceToInstantiate: 0
+  objectWithPlayersLists: {fileID: 0}

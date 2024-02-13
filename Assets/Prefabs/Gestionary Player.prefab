@@ -423,6 +423,7 @@ MonoBehaviour:
   boomerang: {fileID: 5941078918155450006, guid: 576bde559ab00d74b8ff9e4296789803, type: 3}
   dashScript: {fileID: 7181441877174926194}
   distanceToInstantiate: 1.5
+  objectWithPlayersLists: {fileID: 0}
 --- !u!114 &7181441877174926194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,6 +437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashForce: 100
+  timeBetweenDashes: 0
 --- !u!1 &3456370375632690957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1750,6 +1752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1349552787912975790}
+  dashScript: {fileID: 0}
   objectWhoGivePlayer: {fileID: 0}
   boomerangManager: {fileID: 2638989191285051265}
 --- !u!1 &9059695310755318621

@@ -14,6 +14,7 @@ public class Player_Input : MonoBehaviour
     {
         player = FindAnyObjectByType<joinDuringGame>().OnJoin();
         boomerangManager = player.GetComponent<PlayerBoomerang>();
+        
     }
 
     public void OnInputPlayer(InputAction.CallbackContext _context)

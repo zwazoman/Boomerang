@@ -58,5 +58,6 @@ public class PlayerBoomerang : MonoBehaviour
         gameObject.SetActive(false);
         objectWithPlayersLists.GetComponent<joinDuringGame>().playerWithController.Remove(gameObject);
         objectWithPlayersLists.GetComponent<joinDuringGame>().playerWithoutController.Add(gameObject);
+        
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -10,11 +11,13 @@ public class Player : MonoBehaviour
     internal Vector2 _context;
     [SerializeField]
     public PlayerBoomerang boomerangManager;
+    public GameObject InputPlayerGameObjectClone;
 
     private void Start()
     {
         Cursor.visible = false; //Afin de cacher le curseur sur pc
         Cursor.lockState = CursorLockMode.Locked; //Optionnel, bloque la souris au millieu de l'écran
+        InputPlayerGameObjectClone = FindAnyObjectByType<PlayerInput>().gameObject;
     }
     private void Update()
     {
@@ -40,5 +43,9 @@ public class Player : MonoBehaviour
         float rotation = Mathf.Atan2(input.x, input.y) * Mathf.Rad2Deg;
         Quaternion targetRotation = Quaternion.Euler(0f, rotation, 0f);
         transform.rotation = targetRotation;
+    }
+    private void OnDisable()
+    {
+        Destroy(InputPlayerGameObjectClone);
     }
 }

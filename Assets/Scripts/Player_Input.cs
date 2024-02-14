@@ -6,8 +6,6 @@ public class Player_Input : MonoBehaviour
 
     public Player player;//Référence au Script Player (c'est le PlayerBehaviour)
     public DashManager dashScript;
-    public GameObject objectWhoGivePlayer;
-    [SerializeField]
     public PlayerBoomerang boomerangManager;
 
     private void Start()

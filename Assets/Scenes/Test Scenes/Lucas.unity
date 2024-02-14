@@ -178,6 +178,7 @@ MonoBehaviour:
   InputValue: {x: 0, y: 0}
   _context: {x: 0, y: 0}
   boomerangManager: {fileID: 53189001}
+  InputPlayerGameObjectClone: {fileID: 0}
 --- !u!54 &53189003
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1674,6 +1675,7 @@ MonoBehaviour:
   InputValue: {x: 0, y: 0}
   _context: {x: 0, y: 0}
   boomerangManager: {fileID: 1584689684}
+  InputPlayerGameObjectClone: {fileID: 0}
 --- !u!54 &1584689686
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1961,6 +1963,7 @@ MonoBehaviour:
   InputValue: {x: 0, y: 0}
   _context: {x: 0, y: 0}
   boomerangManager: {fileID: 1609504958}
+  InputPlayerGameObjectClone: {fileID: 0}
 --- !u!114 &1609504958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3178,6 +3181,7 @@ MonoBehaviour:
   InputValue: {x: 0, y: 0}
   _context: {x: 0, y: 0}
   boomerangManager: {fileID: 2048840905}
+  InputPlayerGameObjectClone: {fileID: 0}
 --- !u!54 &2048840907
 Rigidbody:
   m_ObjectHideFlags: 0

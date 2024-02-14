@@ -7,7 +7,6 @@ public class PlayerBoomerang : MonoBehaviour
     public GameObject boomerang;
     internal GameObject boomerangTMP;
     BoomerangBehaviour boomScript; // a renommer
-    [SerializeField] DashManager dashScript;
     internal bool hasBoomerang = true; // le joueur a un boomerang ou non
     public float distanceToInstantiate;
     int score;
@@ -22,15 +21,6 @@ public class PlayerBoomerang : MonoBehaviour
             boomScript = boomerangTMP.GetComponent<BoomerangBehaviour>(); // a renommer 
             boomScript.thrower = this.gameObject;
             hasBoomerang = false;
-        }
-    }
-
-    internal void Dash()
-    {
-        if (!hasBoomerang)
-        {
-            print("ALLEZ");
-            dashScript.StartCoroutine("Dash");
         }
     }
 

@@ -36,7 +36,7 @@ public class Player_Input : MonoBehaviour
     {
         if (_context.started)
         {
-            player.boomerangManager.Dash();
+            player.OnDash();
         }
 
     }

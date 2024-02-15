@@ -172,24 +172,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Up",
-                    "type": "Button",
-                    "id": "c94a987f-1d3d-44fc-8ccc-c8375113400f",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Down",
-                    "type": "Button",
-                    "id": "67a18703-a1eb-462c-8239-d4ce66435e52",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Quit",
                     "type": "Button",
                     "id": "b75d3d12-cc87-44a8-b604-9f1a291318fe",
@@ -197,6 +179,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Scroll",
+                    "type": "Value",
+                    "id": "0f29d465-275c-4d42-811a-4dced19f6658",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -224,34 +215,23 @@
                 },
                 {
                     "name": "",
-                    "id": "8726de69-c91d-453b-870e-857ee1abfafb",
-                    "path": "<Gamepad>/leftStick/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Up",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1514dd1e-deb0-4dca-bb0f-fee054b194b1",
-                    "path": "<Gamepad>/leftStick/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Down",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "994d8a4b-d454-4ae9-9257-5703fc495252",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Quit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d1544012-b5e1-4e1a-afc1-ae7e8a046454",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Scroll",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

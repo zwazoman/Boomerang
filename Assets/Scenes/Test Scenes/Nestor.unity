@@ -35545,7 +35545,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4256ecbc578fe14e96f8f6f652487e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashScript: {fileID: 0}
+  boomerang: {fileID: 0}
+  distanceToInstantiate: 0
+  objectWithPlayersLists: {fileID: 0}
 --- !u!1001 &1704610504
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41212,7 +41214,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4256ecbc578fe14e96f8f6f652487e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashScript: {fileID: 0}
+  boomerang: {fileID: 0}
+  distanceToInstantiate: 0
+  objectWithPlayersLists: {fileID: 0}
 --- !u!65 &1957917268
 BoxCollider:
   m_ObjectHideFlags: 0

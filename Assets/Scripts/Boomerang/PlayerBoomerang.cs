@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class PlayerBoomerang : MonoBehaviour
 {
     public GameObject boomerang;
@@ -11,7 +12,8 @@ public class PlayerBoomerang : MonoBehaviour
     public float distanceToInstantiate;
     int score;
     public GameObject objectWithPlayersLists;
-    
+    public TextMeshProUGUI scoreText;
+
     internal void ThrowBoomerang(bool _shouldFly = true)
     {
         if (hasBoomerang)
@@ -25,10 +27,6 @@ public class PlayerBoomerang : MonoBehaviour
         }
     }
 
-    void DropBoomerang()
-    {
-
-    }
     public void ScoreUp()
     {
         // augmente le score quand le message "ScoreUp()" est reçu
@@ -38,6 +36,7 @@ public class PlayerBoomerang : MonoBehaviour
         {
             gameObject.transform.localScale *= 10;
             Time.timeScale = 0;
+            scoreText.text = (score + "/5");
         }
     }
 

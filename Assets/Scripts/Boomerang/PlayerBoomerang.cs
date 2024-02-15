@@ -31,12 +31,11 @@ public class PlayerBoomerang : MonoBehaviour
     {
         // augmente le score quand le message "ScoreUp()" est reçu
         score += 1;
+        scoreText.text = (score + "/5");
         print(score); // a retirer
         if (score == 5)
         {
-            gameObject.transform.localScale *= 10;
-            Time.timeScale = 0;
-            scoreText.text = (score + "/5");
+            // Victoire du joueur actuel 
         }
     }
 

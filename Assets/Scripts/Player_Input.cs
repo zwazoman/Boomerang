@@ -40,4 +40,15 @@ public class Player_Input : MonoBehaviour
         }
 
     }
+
+    public void FindPlayerWithoutChildInputPlayer()
+    {
+        foreach (GameObject PlayerWithController in FindAnyObjectByType<joinDuringGame>().playerWithController)
+        {
+            if (PlayerWithController != null)
+            {
+
+            }
+        }
+    }
 }

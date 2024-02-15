@@ -55,6 +55,7 @@ public class PlayerBoomerang : MonoBehaviour
     public void Kill()
     {
         // détruit le joueur quand "Kill()" est reçu
+        Debug.Log("Player death");
         gameObject.SetActive(false);
         objectWithPlayersLists.GetComponent<joinDuringGame>().playerWithController.Remove(gameObject);
         objectWithPlayersLists.GetComponent<joinDuringGame>().playerWithoutController.Add(gameObject);

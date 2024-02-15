@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,18 +11,22 @@ public class Player : MonoBehaviour
     internal Vector2 InputValue;
     [SerializeField]
     internal Vector2 _context;
-    [SerializeField]
     public PlayerBoomerang boomerangManager;
     public GameObject InputPlayerGameObjectClone;
+    public GameObject objectWithList;
+
 
     private void Start()
     {
+        Debug.Log("player spawn");
         Cursor.visible = false; //Afin de cacher le curseur sur pc
         Cursor.lockState = CursorLockMode.Locked; //Optionnel, bloque la souris au millieu de l'écran
-        InputPlayerGameObjectClone = FindAnyObjectByType<PlayerInput>().gameObject;
+        Debug.Log(objectWithList.GetComponent<joinDuringGame>().playerWithController.Count);
+        InputPlayerGameObjectClone = objectWithList.GetComponent<joinDuringGame>().InputPlayerList[FindIndiceOfObjectInList(objectWithList.GetComponent<joinDuringGame>().playerWithController, gameObject)];
     }
     private void Update()
     {
+        Debug.Log((objectWithList.GetComponent<joinDuringGame>().playerWithController.Count, "from script Player"));
         OnMove(); //Appelle à chaque frame la fct Update
     }
 
@@ -46,6 +52,27 @@ public class Player : MonoBehaviour
     }
     private void OnDisable()
     {
+        objectWithList.GetComponent<joinDuringGame>().InputPlayerList.Remove(InputPlayerGameObjectClone);
         Destroy(InputPlayerGameObjectClone);
+    }
+
+    public int FindIndiceOfObjectInList(List<GameObject> _TargetList, GameObject _objectWeWantIndice)
+    {
+        Debug.Log("start loop to find object indice");
+        Debug.Log(_TargetList.Count);
+        int compteur = 0;
+        foreach (GameObject obj in _TargetList)
+        {
+            compteur++;
+            Debug.Log(("Target object name", _objectWeWantIndice.transform.name));
+            if (obj.transform.name == _objectWeWantIndice.transform.name)
+            {
+                print(compteur);
+                Debug.Log(("", obj.transform.name));
+                return compteur;
+            }
+        }
+        Debug.LogError("Error 404");
+        return compteur;
     }
 }

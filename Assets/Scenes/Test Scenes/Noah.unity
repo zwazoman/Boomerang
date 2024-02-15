@@ -9263,6 +9263,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 4bc5d0ef2fa533b4daa448824b3bf52b, type: 2}
     m_RemovedComponents:
     - {fileID: 7676709148579561100, guid: 81a43912c73070b4bb3272bd3b5e2c3e, type: 3}
+    - {fileID: 8966123650903486875, guid: 81a43912c73070b4bb3272bd3b5e2c3e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -15832,11 +15833,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2180409160312433328, guid: bac0d507564f60545929846f1251b6fd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2638989191285051265, guid: bac0d507564f60545929846f1251b6fd, type: 3}
       propertyPath: boomerangTMP
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796069567030746012, guid: bac0d507564f60545929846f1251b6fd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3344794017740916678, guid: bac0d507564f60545929846f1251b6fd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15878,6 +15883,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4495419793607397852, guid: bac0d507564f60545929846f1251b6fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5747567459459722949, guid: bac0d507564f60545929846f1251b6fd, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -15901,16 +15910,38 @@ PrefabInstance:
     - target: {fileID: 7503062300520855476, guid: bac0d507564f60545929846f1251b6fd, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1919335146}
+      objectReference: {fileID: 691291625}
     - target: {fileID: 7503062300520855476, guid: bac0d507564f60545929846f1251b6fd, type: 3}
       propertyPath: boomerangManager
       value: 
-      objectReference: {fileID: 1919335145}
+      objectReference: {fileID: 691291624}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bac0d507564f60545929846f1251b6fd, type: 3}
+--- !u!114 &691291624 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2638989191285051265, guid: bac0d507564f60545929846f1251b6fd, type: 3}
+  m_PrefabInstance: {fileID: 691291623}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4256ecbc578fe14e96f8f6f652487e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &691291625 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1349552787912975790, guid: bac0d507564f60545929846f1251b6fd, type: 3}
+  m_PrefabInstance: {fileID: 691291623}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93dff71bfb8c78c4abc955ac42e673aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &693754146
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40706,7 +40737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4417928692217440183, guid: 4f916c91b3d56c342845a318b4fb23e3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4417928692217440183, guid: 4f916c91b3d56c342845a318b4fb23e3, type: 3}
       propertyPath: m_TagString
@@ -40771,9 +40802,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boomerang: {fileID: 5941078918155450006, guid: 576bde559ab00d74b8ff9e4296789803, type: 3}
-  boomerangTMP: {fileID: 0}
-  hasBoomerang: 1
   distanceToInstantiate: 4
+  objectWithPlayersLists: {fileID: 0}
 --- !u!114 &1919335146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40787,9 +40817,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  dashForce: 0
+  timeBetweenDashes: 0
   InputValue: {x: 0, y: 0}
   _context: {x: 0, y: 0}
   boomerangManager: {fileID: 1919335145}
+  InputPlayerGameObjectClone: {fileID: 0}
 --- !u!65 &1919335148
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46418,6 +46451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7676709148579561100, guid: 81a43912c73070b4bb3272bd3b5e2c3e, type: 3}
+    - {fileID: 8966123650903486875, guid: 81a43912c73070b4bb3272bd3b5e2c3e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

@@ -5,14 +5,12 @@ using UnityEngine;
 public class BoomerangBehaviour : MonoBehaviour
 {
     Rigidbody rb;
-    internal GameObject thrower;
+    internal GameObject thrower; // le joueur qui ayant lancé le boomerang
     [SerializeField] 
-    float goSpeed;
+    float speed; // vitesse du boomerang a l'allée et au retour
     [SerializeField] 
-    float comeBackSpeed;
-    [SerializeField] 
-    float boomTime;
-    internal bool isGrounded = false;
+    float boomTime; // temps que mets le boomerang avant d'atteindre son apogée dans un premier temps et sa position initiale (un peu plus loin) dans un second temps
+    internal bool shouldFly = true; // vérifie si le boomerang doit voler à l'instanciation ou non
     internal bool isFalling = false;
     float fallTime;
 
@@ -24,24 +22,30 @@ public class BoomerangBehaviour : MonoBehaviour
     
     private IEnumerator Start()
     {
-        rb.AddForce(transform.forward * goSpeed); // le boomerang part 
-        yield return new WaitForSeconds(boomTime); // attendre
-        if (!isFalling)
+        if (shouldFly)
+        {
+            rb.AddForce(transform.forward * speed); // le boomerang part 
+            yield return new WaitForSeconds(boomTime); // attendre
+            if (!isFalling)
+            {
+                rb.velocity = Vector3.zero; // arrête le boomerang pour ne pas interférer avec la force du retour du boomerang
+                Vector3 towardsPlayer = (thrower.transform.position - transform.position).normalized * speed; // calcul de la force du retour du boomerang vers la position du lanceur
+                rb.AddForce(towardsPlayer); // retour du boomerang
+                yield return new WaitForSeconds(fallTime); // attendre
+                FallBoomerang();
+            }
+        }
+        else
         {
 
-            rb.velocity = Vector3.zero; // arrête le boomerang pour ne pas interférer avec la force du retour du boomerang
-            Vector3 towardsPlayer = (thrower.transform.position - transform.position).normalized * comeBackSpeed; // calcul de la force du retour du boomerang vers la position du lanceur
-            rb.AddForce(towardsPlayer); // retour du boomerang
-            yield return new WaitForSeconds(fallTime); // attendre
             FallBoomerang();
         }
-        
     }
     private void Update()
     {
-        if (Physics.Raycast(transform.position, -transform.up, 0.1f))
+        if (!thrower.activeInHierarchy)
         {
-            isGrounded = true;
+            FallBoomerang();
         }
     }
 
@@ -56,6 +60,7 @@ public class BoomerangBehaviour : MonoBehaviour
     {
         // lorsque le boomerang touche une objet
         GameObject objetTouche = collision.gameObject;
+        print(objetTouche);
         if (objetTouche.tag == "Player")
         {
             // vérifie si l 'objet est un joueur
@@ -75,7 +80,7 @@ public class BoomerangBehaviour : MonoBehaviour
                 thrower.GetComponent<PlayerBoomerang>().ScoreUp();
             }
         }
-        if(objetTouche.layer == 3)
+        if(objetTouche.layer == 3 || objetTouche.layer == 7)
         {
             FallBoomerang();
         }

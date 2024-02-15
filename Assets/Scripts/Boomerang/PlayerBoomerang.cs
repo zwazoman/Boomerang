@@ -50,6 +50,7 @@ public class PlayerBoomerang : MonoBehaviour
     public void Kill()
     {
         ThrowBoomerang(false);
+        AudioManager.Instance.PlayDie();
         gameObject.SetActive(false);
         objectWithPlayersLists.GetComponent<joinDuringGame>().playerWithController.Remove(gameObject);
         objectWithPlayersLists.GetComponent<joinDuringGame>().playerWithoutController.Add(gameObject);

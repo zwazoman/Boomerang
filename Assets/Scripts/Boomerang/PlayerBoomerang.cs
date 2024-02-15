@@ -12,7 +12,7 @@ public class PlayerBoomerang : MonoBehaviour
     int score;
     public GameObject objectWithPlayersLists;
     
-    internal void ThrowBoomerang()
+    internal void ThrowBoomerang(bool _shouldFly = true)
     {
         if (hasBoomerang)
         {
@@ -20,15 +20,20 @@ public class PlayerBoomerang : MonoBehaviour
             boomerangTMP = Instantiate(boomerang,transform.position + transform.forward * distanceToInstantiate, transform.rotation); // instanciation du boomerang
             boomScript = boomerangTMP.GetComponent<BoomerangBehaviour>(); // a renommer 
             boomScript.thrower = this.gameObject;
+            boomScript.shouldFly = _shouldFly;
             hasBoomerang = false;
         }
     }
 
+    void DropBoomerang()
+    {
+
+    }
     public void ScoreUp()
     {
         // augmente le score quand le message "ScoreUp()" est reçu
-        print("AUGMENTE LE SCORE"); // a retirer
         score += 1;
+        print(score); // a retirer
         if (score == 5)
         {
             gameObject.transform.localScale *= 10;
@@ -44,10 +49,9 @@ public class PlayerBoomerang : MonoBehaviour
     }
     public void Kill()
     {
-        // détruit le joueur quand "Kill()" est reçu
+        ThrowBoomerang(false);
         gameObject.SetActive(false);
         objectWithPlayersLists.GetComponent<joinDuringGame>().playerWithController.Remove(gameObject);
         objectWithPlayersLists.GetComponent<joinDuringGame>().playerWithoutController.Add(gameObject);
-        
     }
 }

@@ -42,9 +42,10 @@ public class BoomerangBehaviour : MonoBehaviour
     }
     private void Update()
     {
+        // vérifie  si le joueur ayant lancé le boomerang est meure
         if (!thrower.activeInHierarchy)
         {
-            FallBoomerang();
+            FallBoomerang(); // si il meure, le boomerang tombe
         }
     }
 
@@ -81,6 +82,7 @@ public class BoomerangBehaviour : MonoBehaviour
         }
         if(objetTouche.layer == 3 || objetTouche.layer == 7)
         {
+            //si l'objet touché est un mur ou un autre boomerang, le boomerang tombe sur le sol
             FallBoomerang();
         }
     }

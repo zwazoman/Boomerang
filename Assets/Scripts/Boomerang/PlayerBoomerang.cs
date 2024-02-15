@@ -9,8 +9,8 @@ public class PlayerBoomerang : MonoBehaviour
     internal GameObject boomerangTMP;
     BoomerangBehaviour boomScript; // a renommer
     internal bool hasBoomerang = true; // le joueur a un boomerang ou non
-    public float distanceToInstantiate;
-    int score;
+    public float distanceToInstantiate; // distance à laquelle le boomerang va s'instancier rapport au joueur
+    int score; 
     public GameObject objectWithPlayersLists;
     public TextMeshProUGUI scoreText;
 
@@ -20,9 +20,9 @@ public class PlayerBoomerang : MonoBehaviour
         {
             print("lance !"); // a retirer
             boomerangTMP = Instantiate(boomerang,transform.position + transform.forward * distanceToInstantiate, transform.rotation); // instanciation du boomerang
-            boomScript = boomerangTMP.GetComponent<BoomerangBehaviour>(); // a renommer 
+            boomScript = boomerangTMP.GetComponent<BoomerangBehaviour>();
             boomScript.thrower = this.gameObject;
-            boomScript.shouldFly = _shouldFly;
+            boomScript.shouldFly = _shouldFly; // donne l'information que le boomerang vole ou simplement tombe au sol
             hasBoomerang = false;
         }
     }
@@ -48,8 +48,8 @@ public class PlayerBoomerang : MonoBehaviour
     }
     public void Kill()
     {
-        ThrowBoomerang(false);
-        AudioManager.Instance.PlayDie();
+        ThrowBoomerang(false); // jette le boomerang au pieds du joueur mourrant
+        AudioManager.Instance.PlayDie(); // joue le son de mort
         gameObject.SetActive(false);
         objectWithPlayersLists.GetComponent<joinDuringGame>().playerWithController.Remove(gameObject);
         objectWithPlayersLists.GetComponent<joinDuringGame>().playerWithoutController.Add(gameObject);

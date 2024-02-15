@@ -37,7 +37,6 @@ public class BoomerangBehaviour : MonoBehaviour
         }
         else
         {
-
             FallBoomerang();
         }
     }

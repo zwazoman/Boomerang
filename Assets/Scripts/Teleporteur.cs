@@ -26,9 +26,8 @@ public class Teleporteur : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
-        {            //DontTeleportPlayer();
-            if (!canTp)
-                canTp = true;
+        {       
+            DontTeleportPlayer();   
         }
     }
   
@@ -47,6 +46,8 @@ public class Teleporteur : MonoBehaviour
         if (canTp == false)
         {
             Debug.Log("Desactivé");
+            if (!canTp)
+                canTp = true;
         }
     }
 }

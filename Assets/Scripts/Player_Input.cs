@@ -5,7 +5,6 @@ public class Player_Input : MonoBehaviour
 {
 
     public Player player;//Référence au Script Player (c'est le PlayerBehaviour)
-    public DashManager dashScript;
     public PlayerBoomerang boomerangManager;
 
     private void Start()
@@ -18,7 +17,6 @@ public class Player_Input : MonoBehaviour
     public void OnInputPlayer(InputAction.CallbackContext _context)
     {
         player.InputValue = _context.ReadValue<Vector2>();
-        dashScript.InputValue = _context.ReadValue<Vector2>();
     }
 
     public void RotationPlayer(InputAction.CallbackContext _context)
@@ -36,7 +34,7 @@ public class Player_Input : MonoBehaviour
     {
         if (_context.started)
         {
-            player.boomerangManager.Dash();
+            player.OnDash();
         }
 
     }

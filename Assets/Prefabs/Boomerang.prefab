@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1569223492839514793}
   m_Layer: 7
   m_Name: Boomerang
-  m_TagString: Untagged
+  m_TagString: Boomerang
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,8 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd7fad8b1c9e224d89e370696723dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goSpeed: 500
-  comeBackSpeed: 500
+  speed: 500
   boomTime: 0.7
 --- !u!54 &2000632256749283890
 Rigidbody:
@@ -110,7 +109,7 @@ GameObject:
   - component: {fileID: 120278806511408864}
   m_Layer: 7
   m_Name: Rotator
-  m_TagString: Untagged
+  m_TagString: Boomerang
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

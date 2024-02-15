@@ -1,48 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class PlayerBoomerang : MonoBehaviour
 {
     public GameObject boomerang;
     internal GameObject boomerangTMP;
     BoomerangBehaviour boomScript; // a renommer
-    [SerializeField] DashManager dashScript;
     internal bool hasBoomerang = true; // le joueur a un boomerang ou non
-    public float distanceToInstantiate;
-    int score;
+    public float distanceToInstantiate; // distance à laquelle le boomerang va s'instancier rapport au joueur
+    int score; 
     public GameObject objectWithPlayersLists;
-    
-    internal void ThrowBoomerang()
+    public TextMeshProUGUI scoreText;
+
+    internal void ThrowBoomerang(bool _shouldFly = true)
     {
         if (hasBoomerang)
         {
             print("lance !"); // a retirer
             boomerangTMP = Instantiate(boomerang,transform.position + transform.forward * distanceToInstantiate, transform.rotation); // instanciation du boomerang
-            boomScript = boomerangTMP.GetComponent<BoomerangBehaviour>(); // a renommer 
+            boomScript = boomerangTMP.GetComponent<BoomerangBehaviour>();
             boomScript.thrower = this.gameObject;
+            boomScript.shouldFly = _shouldFly; // donne l'information que le boomerang vole ou simplement tombe au sol
             hasBoomerang = false;
-        }
-    }
-
-    internal void Dash()
-    {
-        if (!hasBoomerang)
-        {
-            print("ALLEZ");
-            dashScript.StartCoroutine("Dash");
         }
     }
 
     public void ScoreUp()
     {
         // augmente le score quand le message "ScoreUp()" est reçu
-        print("AUGMENTE LE SCORE"); // a retirer
         score += 1;
+        scoreText.text = (score + "/5");
+        print(score); // a retirer
         if (score == 5)
         {
-            gameObject.transform.localScale *= 10;
-            Time.timeScale = 0;
+            // Victoire du joueur actuel 
         }
     }
 
@@ -54,11 +47,10 @@ public class PlayerBoomerang : MonoBehaviour
     }
     public void Kill()
     {
-        // détruit le joueur quand "Kill()" est reçu
-        Debug.Log("Player death");
+        ThrowBoomerang(false); // jette le boomerang au pieds du joueur mourrant
+        AudioManager.Instance.PlayDie(); // joue le son de mort
         gameObject.SetActive(false);
         objectWithPlayersLists.GetComponent<joinDuringGame>().playerWithController.Remove(gameObject);
         objectWithPlayersLists.GetComponent<joinDuringGame>().playerWithoutController.Add(gameObject);
-        
     }
 }

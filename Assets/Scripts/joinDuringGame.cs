@@ -10,7 +10,6 @@ public class joinDuringGame : MonoBehaviour
 
     public Player OnJoin()
     {
-            Debug.Log("Joining");
             if (playerWithoutController.Count > 0)
             {
                 GameObject PlayerEntering = playerWithoutController[0];
@@ -19,6 +18,7 @@ public class joinDuringGame : MonoBehaviour
                 PlayerEntering.SetActive(true);
                 PlayerEntering.transform.position = spawnPoint[Random.Range(0, spawnPoint.Count)].transform.position;
             return PlayerEntering.GetComponent<Player>();
+
             }
         return null;
     }

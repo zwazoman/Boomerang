@@ -56,7 +56,6 @@ public class BoomerangBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(("OnCollision enter with", collision.collider.name));
         // lorsque le boomerang touche une objet
         GameObject objetTouche = collision.gameObject;
         if (objetTouche.tag == "Player")
@@ -74,7 +73,6 @@ public class BoomerangBehaviour : MonoBehaviour
             else
             {
                 // si le joueur est un ennemi est que le boomerang est dans les airs, le joueur touché meurt et le lanceur reçoit 1 point
-                Debug.Log("Kill");
                 collision.gameObject.SendMessage("Kill");
                 thrower.GetComponent<PlayerBoomerang>().ScoreUp();
             }

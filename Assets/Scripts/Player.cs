@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     public GameObject objectWithList;
     public bool isFirstTimeEnable = true;
     public Animator animator;
+    public List<GameObject> listRefInputPlayer;
+    public List<GameObject> listeRefPlayerWithController;
 
 
     private void Start()
@@ -28,7 +30,7 @@ public class Player : MonoBehaviour
         isFirstTimeEnable = false;
     }
 
-    private void OnEnable()
+    public void awakeDeWish()
     {
         if (!isFirstTimeEnable)
         {
@@ -40,8 +42,7 @@ public class Player : MonoBehaviour
     {
         Cursor.visible = false; //Afin de cacher le curseur sur pc
         Cursor.lockState = CursorLockMode.Locked; //Optionnel, bloque la souris au millieu de l'écran
-        int objectIndexInLIst = objectWithList.GetComponent<joinDuringGame>().playerWithController.IndexOf(gameObject);
-        Debug.Log(objectIndexInLIst);
+        int objectIndexInLIst = listeRefPlayerWithController.IndexOf(gameObject);
 
         if (objectIndexInLIst == -1)
         {
@@ -49,7 +50,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            InputPlayerGameObjectClone = objectWithList.GetComponent<joinDuringGame>().InputPlayerList[objectIndexInLIst];
+            InputPlayerGameObjectClone = listRefInputPlayer[objectIndexInLIst];
         }
     }
 
@@ -64,8 +65,8 @@ public class Player : MonoBehaviour
         Vector3 mouvement = new Vector3(InputValue.x, 0, InputValue.y);
         mouvement.Normalize();
         transform.position = transform.position + (speed * mouvement * Time.deltaTime);// transform.position car il faut que les contrôles soit basé sur le world Space
-        //animator.SetFloat("AxisUp", mouvement.magnitude);
-        //animator.SetFloat("AxisLow", mouvement.magnitude);
+        animator.SetFloat("AxisUp", mouvement.magnitude);
+        animator.SetFloat("AxisLow", mouvement.magnitude);
     }
 
     public void Rotation()//Gère les contrôles du stick gauche

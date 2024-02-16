@@ -27,7 +27,7 @@ public class Pause : MonoBehaviour
     {
         if (_context.action.triggered && _context.action.name == "Quit")
         {
-            Debug.Log(_context.action.triggered);
+            
             Application.Quit();
         }
     }

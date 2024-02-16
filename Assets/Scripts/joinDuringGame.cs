@@ -8,6 +8,16 @@ public class joinDuringGame : MonoBehaviour
     public List<GameObject> spawnPoint;
     public List<GameObject> InputPlayerList;
 
+
+    private void Start()
+    {
+        foreach (var player in playerWithoutController)
+        {
+            player.GetComponent<Player>().listRefInputPlayer = GetComponent<joinDuringGame>().InputPlayerList;
+            player.GetComponent<Player>().listeRefPlayerWithController = GetComponent<joinDuringGame>().playerWithController;
+        }
+    }
+
     public Player OnJoin()
     {
         if (playerWithoutController.Count > 0)
@@ -21,7 +31,6 @@ public class joinDuringGame : MonoBehaviour
             PlayerEntering.GetComponent<PlayerBoomerang>().objectWithPlayersLists = this.gameObject;
             return PlayerEntering.GetComponent<Player>();
         }
-
         return null;
     }
 }

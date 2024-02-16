@@ -10,6 +10,10 @@ public class Player_Input : MonoBehaviour
     {
         player = FindAnyObjectByType<joinDuringGame>().OnJoin();
         boomerangManager = player.GetComponent<PlayerBoomerang>();
+        if (!player.GetComponent<Player>().isFirstTimeEnable)
+        {
+            player.GetComponent<Player>().awakeDeWish();
+        }
     }
 
     public void OnInputPlayer(InputAction.CallbackContext _context)
@@ -31,17 +35,5 @@ public class Player_Input : MonoBehaviour
     public void OnThrow(InputAction.CallbackContext _context)
     {
         player.boomerangManager.ThrowBoomerang();
-    }
-
-    public void FindPlayerWithoutChildInputPlayer()
-    {
-        foreach (GameObject PlayerWithController in FindAnyObjectByType<joinDuringGame>().playerWithController)
-        {
-            if (PlayerWithController != null)
-            {
-
-            }
-
-        }
     }
 }

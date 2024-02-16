@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     public GameObject objectWithList;
     public bool isFirstTimeEnable = true;
     public Animator animator;
+    public List<GameObject> listRefInputPlayer;
+    public List<GameObject> listeRefPlayerWithController;
 
 
     private void Start()
@@ -28,7 +30,7 @@ public class Player : MonoBehaviour
         isFirstTimeEnable = false;
     }
 
-    private void OnEnable()
+    public void awakeDeWish()
     {
         if (!isFirstTimeEnable)
         {
@@ -40,8 +42,7 @@ public class Player : MonoBehaviour
     {
         Cursor.visible = false; //Afin de cacher le curseur sur pc
         Cursor.lockState = CursorLockMode.Locked; //Optionnel, bloque la souris au millieu de l'écran
-        int objectIndexInLIst = objectWithList.GetComponent<joinDuringGame>().playerWithController.IndexOf(gameObject);
-        Debug.Log(objectIndexInLIst);
+        int objectIndexInLIst = listeRefPlayerWithController.IndexOf(gameObject);
 
         if (objectIndexInLIst == -1)
         {
@@ -49,7 +50,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            InputPlayerGameObjectClone = objectWithList.GetComponent<joinDuringGame>().InputPlayerList[objectIndexInLIst];
+            InputPlayerGameObjectClone = listRefInputPlayer[objectIndexInLIst];
         }
     }
 

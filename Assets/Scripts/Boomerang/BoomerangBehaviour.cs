@@ -58,7 +58,7 @@ public class BoomerangBehaviour : MonoBehaviour
     {
         // lorsque le boomerang touche une objet
         GameObject objetTouche = collision.gameObject;
-        print(objetTouche);
+        //print(objetTouche);
         if (objetTouche.tag == "Player")
         {
             // vérifie si l 'objet est un joueur

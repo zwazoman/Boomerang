@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,13 +15,33 @@ public class Player : MonoBehaviour
     public PlayerBoomerang boomerangManager;
     public GameObject InputPlayerGameObjectClone;
     public GameObject objectWithList;
+    public bool isFirstTimeEnable = true;
 
 
     private void Start()
     {
+        if (isFirstTimeEnable)
+        {
+            Initialize();
+        }
+        isFirstTimeEnable = false;
+    }
+
+    private void OnEnable()
+    {
+        if (!isFirstTimeEnable)
+        {
+            Initialize();
+        }
+    }
+
+    private void Initialize()
+    {
         Cursor.visible = false; //Afin de cacher le curseur sur pc
         Cursor.lockState = CursorLockMode.Locked; //Optionnel, bloque la souris au millieu de l'écran
         int objectIndexInLIst = objectWithList.GetComponent<joinDuringGame>().playerWithController.IndexOf(gameObject);
+        Debug.Log(objectIndexInLIst);
+
         if (objectIndexInLIst == -1)
         {
             Debug.LogError("PROBLEM");
@@ -30,6 +51,7 @@ public class Player : MonoBehaviour
             InputPlayerGameObjectClone = objectWithList.GetComponent<joinDuringGame>().InputPlayerList[objectIndexInLIst];
         }
     }
+
     private void Update()
     {
         OnMove(); //Appelle à chaque frame la fct Update

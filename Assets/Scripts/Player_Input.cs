@@ -33,15 +33,6 @@ public class Player_Input : MonoBehaviour
         player.boomerangManager.ThrowBoomerang();
     }
 
-    public void OnDash(InputAction.CallbackContext _context)
-    {
-        if (_context.started)
-        {
-            //player.OnDash();
-        }
-
-    }
-
     public void FindPlayerWithoutChildInputPlayer()
     {
         foreach (GameObject PlayerWithController in FindAnyObjectByType<joinDuringGame>().playerWithController)

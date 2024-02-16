@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,6 +9,7 @@ public class PlayerInputInitializer : MonoBehaviour
     private GameObject pausePanel;
     [SerializeField] private TextMeshProUGUI score;
     [SerializeField] private GameObject boomerangPrefabToGive;
+    public GameObject listManagerObject;
 
 
     private void Awake()
@@ -20,5 +22,6 @@ public class PlayerInputInitializer : MonoBehaviour
         obj.GetComponent<Pause>().PanelPause = pausePanel;
         obj.GetComponent<PlayerBoomerang>().scoreText = score;
         obj.GetComponent<PlayerBoomerang>().boomerang = boomerangPrefabToGive;
+        List<GameObject> uneListe = listManagerObject.GetComponent<joinDuringGame>().playerWithController;
     }
 }

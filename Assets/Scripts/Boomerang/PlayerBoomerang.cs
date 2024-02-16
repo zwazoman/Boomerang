@@ -9,13 +9,18 @@ public class PlayerBoomerang : MonoBehaviour
     public GameObject boomerang;
     internal GameObject boomerangTMP;
     BoomerangBehaviour boomScript; // a renommer
-    internal bool hasBoomerang = true; // le joueur a un boomerang ou non
+    public bool hasBoomerang = true; // le joueur a un boomerang ou non
     public float distanceToInstantiate; // distance à laquelle le boomerang va s'instancier rapport au joueur
     int score; 
     public GameObject objectWithPlayersLists;
     public TextMeshProUGUI scoreText;
     public GameObject Victory_panel;
     [SerializeField] float boomHeight = 0.5f;
+
+    private void Start()
+    {
+        hasBoomerang = true;
+    }
 
     internal void ThrowBoomerang(bool _shouldFly = true)
     {
@@ -35,7 +40,6 @@ public class PlayerBoomerang : MonoBehaviour
         // augmente le score quand le message "ScoreUp()" est reçu
         score += 1;
         scoreText.text = (score + "/5");
-        print(score); // a retirer
         if (score == 5)
         {
             Victory_panel.SetActive(true);

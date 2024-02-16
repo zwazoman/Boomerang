@@ -64,8 +64,8 @@ public class Player : MonoBehaviour
         Vector3 mouvement = new Vector3(InputValue.x, 0, InputValue.y);
         mouvement.Normalize();
         transform.position = transform.position + (speed * mouvement * Time.deltaTime);// transform.position car il faut que les contrôles soit basé sur le world Space
-        animator.SetFloat("AxisUp", mouvement.magnitude);
-        animator.SetFloat("AxisLow", mouvement.magnitude);
+        //animator.SetFloat("AxisUp", mouvement.magnitude);
+        //animator.SetFloat("AxisLow", mouvement.magnitude);
     }
 
     public void Rotation()//Gère les contrôles du stick gauche

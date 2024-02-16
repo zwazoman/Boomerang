@@ -35,6 +35,6 @@ public class _Start : MonoBehaviour
         text4.SetActive(true);
         yield return new WaitForSeconds(1);
         text4.SetActive(false);
-        panel.SetActive(false);
+
     }
 }

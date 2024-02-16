@@ -10,12 +10,12 @@ public class RecupBoomerang : MonoBehaviour
     {
         if (other.gameObject.tag == "Boomerang")
         {
-            other.transform.position = spawnPoint_Boomerang[Random.Range(0, spawnPoint_Boomerang.Count)].transform.position;
+            other.transform.position = spawnPoint_Boomerang[Random.Range(0, spawnPoint_Boomerang.Count - 1)].transform.position;
         }
 
         if (other.gameObject.tag == "Player")
         {
-            other.transform.position = spawnPoint_Boomerang[Random.Range(0, spawnPoint_Boomerang.Count)].transform.position;
+            other.transform.position = spawnPoint_Boomerang[Random.Range(0, spawnPoint_Boomerang.Count - 1)].transform.position;
         }
     }
 }

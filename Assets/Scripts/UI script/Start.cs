@@ -1,17 +1,21 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class _Start : MonoBehaviour
 {
-    private GameObject text1;
-    private GameObject text2;
-    private GameObject text3;
-    private GameObject text4;
-    private AudioSource source;
-    private AudioSource source2;
+    [SerializeField] private GameObject text1;
+    [SerializeField] private GameObject text2;
+    [SerializeField] private GameObject text3;
+    [SerializeField] private GameObject text4;
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioSource source2;
+    [SerializeField] private PlayerInput _playerInput;
+
 
     public void Awake()
     {
+        //GetComponent<PlayerInputManager>().joiningEnabled = true;
         StartCoroutine(_timer());
     }
 
@@ -34,5 +38,6 @@ public class _Start : MonoBehaviour
         text4.SetActive(true);
         yield return new WaitForSeconds(1);
         text4.SetActive(false);
+        _playerInput.SwitchCurrentActionMap("Player");
     }
 }

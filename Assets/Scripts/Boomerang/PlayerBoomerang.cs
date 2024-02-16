@@ -39,7 +39,7 @@ public class PlayerBoomerang : MonoBehaviour
     {
         // augmente le score quand le message "ScoreUp()" est reçu
         score += 1;
-        scoreText.text = (score + "/5");
+        scoreText.text = score + "/5";
         if (score == 5)
         {
             Victory_panel.SetActive(true);
@@ -55,6 +55,8 @@ public class PlayerBoomerang : MonoBehaviour
 
     public void Kill()
     {
+        score = 0;
+        scoreText.text = score + "/5";
         ThrowBoomerang(false); // jette le boomerang au pieds du joueur mourrant
         AudioManager.Instance.PlayDie(); // joue le son de mort
         gameObject.SetActive(false);

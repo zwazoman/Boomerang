@@ -7,15 +7,18 @@ public class Player_Input : MonoBehaviour
     public Player player;//Référence au Script Player (c'est le PlayerBehaviour)
     public PlayerBoomerang boomerangManager;
 
-    private void Start()
+    private void Awake()
     {
         player = FindAnyObjectByType<joinDuringGame>().OnJoin();
         boomerangManager = player.GetComponent<PlayerBoomerang>();
-        
     }
 
     public void OnInputPlayer(InputAction.CallbackContext _context)
     {
+        if (player == null)
+        {
+            return;
+        }
         player.InputValue = _context.ReadValue<Vector2>();
     }
 
@@ -34,8 +37,19 @@ public class Player_Input : MonoBehaviour
     {
         if (_context.started)
         {
-            player.OnDash();
+            //player.OnDash();
         }
 
+    }
+
+    public void FindPlayerWithoutChildInputPlayer()
+    {
+        foreach (GameObject PlayerWithController in FindAnyObjectByType<joinDuringGame>().playerWithController)
+        {
+            if (PlayerWithController != null)
+            {
+
+            }
+        }
     }
 }

@@ -15,13 +15,14 @@ public class PlayerBoomerang : MonoBehaviour
     public GameObject objectWithPlayersLists;
     public TextMeshProUGUI scoreText;
     public GameObject Victory_panel;
+    [SerializeField] float boomHeight = 0.5f;
 
     internal void ThrowBoomerang(bool _shouldFly = true)
     {
         if (hasBoomerang)
         {
-            AudioManager.Instance.PlayThrow();// joue le son throwSound
-            boomerangTMP = Instantiate(boomerang,transform.position + transform.forward * distanceToInstantiate + Vector3.up * 0.5f , transform.rotation); // instanciation du boomerang
+            //AudioManager.Instance.PlayThrow();// joue le son throwSound
+            boomerangTMP = Instantiate(boomerang,transform.position + transform.forward * distanceToInstantiate + Vector3.up * boomHeight, transform.rotation); // instanciation du boomerang
             boomScript = boomerangTMP.GetComponent<BoomerangBehaviour>();
             boomScript.thrower = this.gameObject;
             boomScript.shouldFly = _shouldFly; // donne l'information que le boomerang vole ou simplement tombe au sol
@@ -52,6 +53,9 @@ public class PlayerBoomerang : MonoBehaviour
         ThrowBoomerang(false); // jette le boomerang au pieds du joueur mourrant
         AudioManager.Instance.PlayDie(); // joue le son de mort
         gameObject.SetActive(false);
+        //this.gameObject.GetComponent<Player>()
+        //Destroy(this.gameObject.GetComponent<Player>().objectWithList.GetComponent<joinDuringGame>().InputPlayerList[this.gameObject.GetComponent<Player>().objectWithList.GetComponent<joinDuringGame>().playerWithController.IndexOf(this.gameObject)]);
+        //gameObject.GetComponent<Player>().objectWithList.GetComponent<joinDuringGame>().InputPlayerList[];
         objectWithPlayersLists.GetComponent<joinDuringGame>().playerWithController.Remove(gameObject);
         objectWithPlayersLists.GetComponent<joinDuringGame>().playerWithoutController.Add(gameObject);
     }

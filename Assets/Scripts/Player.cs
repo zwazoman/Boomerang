@@ -18,7 +18,6 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Player start");
         Cursor.visible = false; //Afin de cacher le curseur sur pc
         Cursor.lockState = CursorLockMode.Locked; //Optionnel, bloque la souris au millieu de l'écran
         int objectIndexInLIst = objectWithList.GetComponent<joinDuringGame>().playerWithController.IndexOf(gameObject);
@@ -41,7 +40,7 @@ public class Player : MonoBehaviour
     {
         Vector3 mouvement = new Vector3(InputValue.x, 0, InputValue.y);
         mouvement.Normalize();
-        transform.position = transform.position + (speed * mouvement * Time.deltaTime);//transform.position car il faut que les contrôles soit basé sur le world Space
+        transform.position = transform.position + (speed * mouvement * Time.deltaTime);// transform.position car il faut que les contrôles soit basé sur le world Space
     }
 
     public void Rotation()//Gère les contrôles du stick gauche
@@ -56,28 +55,10 @@ public class Player : MonoBehaviour
         Quaternion targetRotation = Quaternion.Euler(0f, rotation, 0f);
         transform.rotation = targetRotation;
     }
+
     private void OnDisable()
     {
-        Debug.Log("fdp");
-        objectWithList.GetComponent<joinDuringGame>().InputPlayerList.Remove(InputPlayerGameObjectClone);
-        
-        Destroy(InputPlayerGameObjectClone);
-    }
-
-    public int FindIndiceOfObjectInList(List<GameObject> _TargetList, GameObject _objectWeWantIndice)
-    {
-        Debug.Log("Find indice start");
-        int compteur = 0;
-        foreach (GameObject obj in _TargetList)
-        {
-            compteur++;
-            if (obj.transform.name == _objectWeWantIndice.transform.name)
-            {
-                Debug.Log(("Return indice :", compteur-1));
-                return compteur-1;
-            }
-        }
-        Debug.Log(("Object not found", compteur));
-        return compteur;
+        objectWithList.GetComponent<joinDuringGame>().InputPlayerList.Remove(this.InputPlayerGameObjectClone);
+        Destroy(this.InputPlayerGameObjectClone);
     }
 }

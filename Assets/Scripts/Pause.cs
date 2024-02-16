@@ -4,13 +4,13 @@ using UnityEngine.InputSystem;
 public class Pause : MonoBehaviour
 {
     [SerializeField] private PlayerInput _playerInput;
-    [SerializeField] private GameObject panel_pause;
+    [SerializeField] public GameObject PanelPause;
 
 
     public void OnPause(InputAction.CallbackContext _context) //fct qui lance l'écran de pause
     {
         _playerInput.SwitchCurrentActionMap("UI");
-        panel_pause.SetActive(true);
+        PanelPause.SetActive(true);
         Time.timeScale = 0;
     }
 
@@ -28,6 +28,6 @@ public class Pause : MonoBehaviour
     {
         _playerInput.SwitchCurrentActionMap("Player");
         Time.timeScale = 1;
-        panel_pause.SetActive(false);
+        PanelPause.SetActive(false);
     }
 }

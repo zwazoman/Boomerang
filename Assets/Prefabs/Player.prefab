@@ -105,6 +105,7 @@ MonoBehaviour:
   _context: {x: 0, y: 0}
   boomerangManager: {fileID: 2585981949975653113}
   InputPlayerGameObjectClone: {fileID: 0}
+  objectWithList: {fileID: 5536609347423899703, guid: 6bba93efe72236349aca4825c55ea607, type: 3}
 --- !u!114 &2585981949975653113
 MonoBehaviour:
   m_ObjectHideFlags: 0

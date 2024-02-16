@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2927115177237299115}
   - component: {fileID: 4268673229631918137}
   - component: {fileID: -671989158353575678}
+  - component: {fileID: -5979937706864122489}
   m_Layer: 0
   m_Name: Input Player
   m_TagString: Untagged
@@ -227,7 +228,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   dashScript: {fileID: 0}
-  objectWhoGivePlayer: {fileID: 0}
   boomerangManager: {fileID: 0}
 --- !u!114 &-671989158353575678
 MonoBehaviour:
@@ -245,3 +245,17 @@ MonoBehaviour:
   dashScript: {fileID: 0}
   distanceToInstantiate: 0
   objectWithPlayersLists: {fileID: 0}
+--- !u!114 &-5979937706864122489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6708251660742234360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 101b68b0d37f81f41822c71266cd7fde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectWithList: {fileID: 0}
+  isAttributeToPLayer: 0

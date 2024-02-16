@@ -1,16 +1,20 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class Pause : MonoBehaviour
 {
     [SerializeField] private PlayerInput _playerInput;
-    [SerializeField] private GameObject panel_pause;
+    [SerializeField] internal GameObject panel_pause;
+    public GameObject Pause_button;
 
 
     public void OnPause(InputAction.CallbackContext _context) //fct qui lance l'écran de pause
     {
         _playerInput.SwitchCurrentActionMap("UI");
         panel_pause.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(Pause_button);
         Time.timeScale = 0;
     }
 

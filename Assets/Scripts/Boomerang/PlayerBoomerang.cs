@@ -20,7 +20,7 @@ public class PlayerBoomerang : MonoBehaviour
     {
         if (hasBoomerang)
         {
-            AudioManager.Instance.PlayThrow();// joue le son throwSound
+            //AudioManager.Instance.PlayThrow();// joue le son throwSound
             boomerangTMP = Instantiate(boomerang,transform.position + transform.forward * distanceToInstantiate, transform.rotation); // instanciation du boomerang
             boomScript = boomerangTMP.GetComponent<BoomerangBehaviour>();
             boomScript.thrower = this.gameObject;
@@ -52,6 +52,7 @@ public class PlayerBoomerang : MonoBehaviour
         ThrowBoomerang(false); // jette le boomerang au pieds du joueur mourrant
         AudioManager.Instance.PlayDie(); // joue le son de mort
         gameObject.SetActive(false);
+        //gameObject.GetComponent<Player>().objectWithList.GetComponent<joinDuringGame>().InputPlayerList;
         objectWithPlayersLists.GetComponent<joinDuringGame>().playerWithController.Remove(gameObject);
         objectWithPlayersLists.GetComponent<joinDuringGame>().playerWithoutController.Add(gameObject);
     }

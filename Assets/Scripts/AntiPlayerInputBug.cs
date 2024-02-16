@@ -7,7 +7,7 @@ public class AntiPlayerInputBug : MonoBehaviour
     public GameObject objectWithList;
     public bool isAttributeToPLayer;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Debug.Log("Start anti bug");
         //objectWithList = FindAnyObjectByType<Player>().GetComponent<Player>().objectWithList;

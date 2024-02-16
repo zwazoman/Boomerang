@@ -21,7 +21,15 @@ public class Player : MonoBehaviour
         Debug.Log("Player start");
         Cursor.visible = false; //Afin de cacher le curseur sur pc
         Cursor.lockState = CursorLockMode.Locked; //Optionnel, bloque la souris au millieu de l'écran
-        InputPlayerGameObjectClone = objectWithList.GetComponent<joinDuringGame>().InputPlayerList[FindIndiceOfObjectInList(objectWithList.GetComponent<joinDuringGame>().playerWithController, gameObject)];
+        int objectIndexInLIst = objectWithList.GetComponent<joinDuringGame>().playerWithController.IndexOf(gameObject);
+        if (objectIndexInLIst == -1)
+        {
+            Debug.LogError("PROBLEM");
+        }
+        else
+        {
+            InputPlayerGameObjectClone = objectWithList.GetComponent<joinDuringGame>().InputPlayerList[objectIndexInLIst];
+        }
     }
     private void Update()
     {

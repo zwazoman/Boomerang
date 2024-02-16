@@ -18,7 +18,7 @@ public class PlayerBoomerang : MonoBehaviour
     {
         if (hasBoomerang)
         {
-            print("lance !"); // a retirer
+            AudioManager.Instance.PlayThrow();// joue le son throwSound
             boomerangTMP = Instantiate(boomerang,transform.position + transform.forward * distanceToInstantiate, transform.rotation); // instanciation du boomerang
             boomScript = boomerangTMP.GetComponent<BoomerangBehaviour>();
             boomScript.thrower = this.gameObject;
@@ -36,13 +36,14 @@ public class PlayerBoomerang : MonoBehaviour
         if (score == 5)
         {
             // Victoire du joueur actuel 
+            
         }
     }
 
     public void PickUp()
     {
         // ramasse le boomerang quand le message "PickUp()" est reçu
-        print("RAMASSE"); // a retirer
+        AudioManager.Instance.PlayCatch(); // joue le son "catchSound"
         hasBoomerang = true;
     }
     public void Kill()

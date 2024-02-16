@@ -10,7 +10,6 @@ public class AntiPlayerInputBug : MonoBehaviour
     void Start()
     {
         objectWithList = FindAnyObjectByType<Player>().GetComponent<Player>().objectWithList;
-        Debug.Log("InputPLayer Invoeked");
         objectWithList.GetComponent<joinDuringGame>().InputPlayerList.Add(gameObject);
     }
 }

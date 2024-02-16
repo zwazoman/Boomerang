@@ -14,11 +14,16 @@ public class PlayerBoomerang : MonoBehaviour
     public GameObject objectWithPlayersLists;
     public TextMeshProUGUI scoreText;
 
+    private void Start()
+    {
+        objectWithPlayersLists = FindAnyObjectByType<Player>().GetComponent<Player>().objectWithList;
+    }
+
     internal void ThrowBoomerang(bool _shouldFly = true)
     {
         if (hasBoomerang)
         {
-            print("lance !"); // a retirer
+            //print("lance !"); // a retirer
             boomerangTMP = Instantiate(boomerang,transform.position + transform.forward * distanceToInstantiate, transform.rotation); // instanciation du boomerang
             boomScript = boomerangTMP.GetComponent<BoomerangBehaviour>();
             boomScript.thrower = this.gameObject;
@@ -32,7 +37,7 @@ public class PlayerBoomerang : MonoBehaviour
         // augmente le score quand le message "ScoreUp()" est reçu
         score += 1;
         scoreText.text = (score + "/5");
-        print(score); // a retirer
+        //print(score); // a retirer
         if (score == 5)
         {
             // Victoire du joueur actuel 
@@ -42,7 +47,7 @@ public class PlayerBoomerang : MonoBehaviour
     public void PickUp()
     {
         // ramasse le boomerang quand le message "PickUp()" est reçu
-        print("RAMASSE"); // a retirer
+        //print("RAMASSE"); // a retirer
         hasBoomerang = true;
     }
     public void Kill()

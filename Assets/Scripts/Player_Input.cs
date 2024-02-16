@@ -34,7 +34,7 @@ public class Player_Input : MonoBehaviour
     {
         if (_context.started)
         {
-            player.OnDash();
+            //player.OnDash();
         }
 
     }

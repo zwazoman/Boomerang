@@ -15,13 +15,14 @@ public class PlayerBoomerang : MonoBehaviour
     public GameObject objectWithPlayersLists;
     public TextMeshProUGUI scoreText;
     public GameObject Victory_panel;
+    [SerializeField] float boomHeight = 0.5f;
 
     internal void ThrowBoomerang(bool _shouldFly = true)
     {
         if (hasBoomerang)
         {
             //AudioManager.Instance.PlayThrow();// joue le son throwSound
-            boomerangTMP = Instantiate(boomerang,transform.position + transform.forward * distanceToInstantiate, transform.rotation); // instanciation du boomerang
+            boomerangTMP = Instantiate(boomerang,transform.position + transform.forward * distanceToInstantiate + Vector3.up * boomHeight, transform.rotation); // instanciation du boomerang
             boomScript = boomerangTMP.GetComponent<BoomerangBehaviour>();
             boomScript.thrower = this.gameObject;
             boomScript.shouldFly = _shouldFly; // donne l'information que le boomerang vole ou simplement tombe au sol

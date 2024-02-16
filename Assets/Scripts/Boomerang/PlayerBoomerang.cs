@@ -14,6 +14,7 @@ public class PlayerBoomerang : MonoBehaviour
     int score; 
     public GameObject objectWithPlayersLists;
     public TextMeshProUGUI scoreText;
+    public GameObject Victory_panel;
 
     internal void ThrowBoomerang(bool _shouldFly = true)
     {
@@ -36,7 +37,7 @@ public class PlayerBoomerang : MonoBehaviour
         print(score); // a retirer
         if (score == 5)
         {
-            SceneManager.LoadScene("Victory");
+            Victory_panel.SetActive(true);
         }
     }
 

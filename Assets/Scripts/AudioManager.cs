@@ -11,9 +11,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip throwSound;
     [SerializeField] AudioClip dieSound;
     [SerializeField] AudioClip catchSound;
-    [SerializeField] AudioClip walkSound;
     [SerializeField] AudioClip winSound;
-    [SerializeField] AudioClip buttonClickSound;
 
     private void Awake()
     {
@@ -33,12 +31,22 @@ public class AudioManager : MonoBehaviour
 
     internal void PlayThrow()
     {
-        PlaySound(throwSound); // pitch random entre 0.8 et 1
+        PlaySound(throwSound,Random.Range(0.6f,0.8f),0.8f); // pitch random entre 0.8 et 1
     }
 
     internal void PlayDie()
     {
         PlaySound(dieSound);
+    }
+
+    internal void PlayCatch()
+    {
+        PlaySound(catchSound, Random.Range(0.8f,1));
+    }
+
+    internal void PlayWin()
+    {
+        PlaySound(winSound);
     }
 
     void PlaySound(AudioClip clip, float _pitch = 1, float _volume = 1)

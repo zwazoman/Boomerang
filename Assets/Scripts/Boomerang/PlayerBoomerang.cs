@@ -13,6 +13,8 @@ public class PlayerBoomerang : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public GameObject Victory_panel;
     [SerializeField] float boomHeight = 0.5f;
+    public Animator animator;
+    public GameObject deadParticles;
 
     private void Start()
     {
@@ -23,6 +25,7 @@ public class PlayerBoomerang : MonoBehaviour
     {
         if (hasBoomerang)
         {
+            animator.SetTrigger("BoomrangThrow");
             //AudioManager.Instance.PlayThrow();// joue le son throwSound
             boomerangTMP = Instantiate(boomerang,transform.position + transform.forward * distanceToInstantiate + Vector3.up * boomHeight, transform.rotation); // instanciation du boomerang
             boomScript = boomerangTMP.GetComponent<BoomerangBehaviour>();
@@ -60,5 +63,6 @@ public class PlayerBoomerang : MonoBehaviour
         // gameObject.GetComponent<Player>().objectWithList.GetComponent<joinDuringGame>().InputPlayerList[];
         objectWithPlayersLists.GetComponent<joinDuringGame>().playerWithController.Remove(gameObject);
         objectWithPlayersLists.GetComponent<joinDuringGame>().playerWithoutController.Add(gameObject);
+        Instantiate(deadParticles);
     }
 }

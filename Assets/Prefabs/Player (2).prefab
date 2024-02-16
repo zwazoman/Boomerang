@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 6944219079629068361}
   - component: {fileID: 2682439484070165258}
   - component: {fileID: 3828156899595963159}
-  - component: {fileID: 1887122030016298139}
   m_Layer: 0
   m_Name: Player (2)
   m_TagString: Player
@@ -171,23 +170,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boomerang: {fileID: 5941078918155450006, guid: 576bde559ab00d74b8ff9e4296789803, type: 3}
-  dashScript: {fileID: 0}
   distanceToInstantiate: 2
   objectWithPlayersLists: {fileID: 0}
---- !u!114 &1887122030016298139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5534311043301354417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc5b57995a82eae4ca452ced6f871958, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashForce: 2
-  timeBetweenDashes: 0
+  scoreText: {fileID: 0}
 --- !u!1 &5853425128095177319
 GameObject:
   m_ObjectHideFlags: 0

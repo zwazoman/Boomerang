@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Player start");
         Cursor.visible = false; //Afin de cacher le curseur sur pc
         Cursor.lockState = CursorLockMode.Locked; //Optionnel, bloque la souris au millieu de l'écran
         InputPlayerGameObjectClone = objectWithList.GetComponent<joinDuringGame>().InputPlayerList[FindIndiceOfObjectInList(objectWithList.GetComponent<joinDuringGame>().playerWithController, gameObject)];
@@ -55,16 +56,18 @@ public class Player : MonoBehaviour
 
     public int FindIndiceOfObjectInList(List<GameObject> _TargetList, GameObject _objectWeWantIndice)
     {
+        Debug.Log("Find indice start");
         int compteur = 0;
         foreach (GameObject obj in _TargetList)
         {
             compteur++;
             if (obj.transform.name == _objectWeWantIndice.transform.name)
             {
-                print(compteur);
-                return compteur;
+                Debug.Log(("Return indice :", compteur-1));
+                return compteur-1;
             }
         }
+        Debug.Log(("Object not found", compteur));
         return compteur;
     }
 }

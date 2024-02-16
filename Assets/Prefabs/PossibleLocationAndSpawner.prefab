@@ -271,10 +271,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerWithoutController:
-  - {fileID: 6993863557147855964, guid: 18879b211b562714da5e6a6a03651e55, type: 3}
-  - {fileID: 6022142696380648180, guid: 0541c7ef558560a4f9f9432d4c3f8ba9, type: 3}
-  - {fileID: 5534311043301354417, guid: 0e739efd6ba059c45856a1ca6b8e430d, type: 3}
-  - {fileID: 8849136433170509608, guid: be9611ea06228c144922c9909788fd55, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   playerWithController: []
   spawnPoint:
   - {fileID: 4195759637795893390}

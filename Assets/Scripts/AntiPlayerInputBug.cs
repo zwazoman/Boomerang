@@ -9,6 +9,7 @@ public class AntiPlayerInputBug : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("AntiBugStart");
         objectWithList = FindAnyObjectByType<Player>().GetComponent<Player>().objectWithList;
         objectWithList.GetComponent<joinDuringGame>().InputPlayerList.Add(gameObject);
     }

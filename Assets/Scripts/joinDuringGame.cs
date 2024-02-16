@@ -13,6 +13,7 @@ public class joinDuringGame : MonoBehaviour
     {
         if (playerWithoutController.Count > 0)
         {
+            Debug.Log("Joining");
             GameObject PlayerEntering = playerWithoutController[0]; 
             playerWithoutController.RemoveAt(0);
             playerWithController.Add(PlayerEntering);
@@ -22,5 +23,10 @@ public class joinDuringGame : MonoBehaviour
 
         }
     return null;
+    }
+
+    private void Update()
+    {
+        Debug.Log(InputPlayerList.Count);
     }
 }

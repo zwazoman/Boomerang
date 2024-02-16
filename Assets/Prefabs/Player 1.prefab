@@ -229,7 +229,6 @@ GameObject:
   - component: {fileID: 1214096087814033966}
   - component: {fileID: 5536082735460961620}
   - component: {fileID: 4935476346926409365}
-  - component: {fileID: 8913541544112490625}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -385,20 +384,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boomerang: {fileID: 5941078918155450006, guid: 576bde559ab00d74b8ff9e4296789803, type: 3}
-  dashScript: {fileID: 8913541544112490625}
   distanceToInstantiate: 2
   objectWithPlayersLists: {fileID: 0}
---- !u!114 &8913541544112490625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6993863557147855964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc5b57995a82eae4ca452ced6f871958, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashForce: 2
-  timeBetweenDashes: 0
+  scoreText: {fileID: 0}

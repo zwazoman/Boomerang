@@ -251,14 +251,6 @@ PrefabInstance:
       value: PossibleLocationAndSpawner (1)
       objectReference: {fileID: 0}
     - target: {fileID: 5652152906292597838, guid: 6bba93efe72236349aca4825c55ea607, type: 3}
-      propertyPath: InputPlayerList.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5652152906292597838, guid: 6bba93efe72236349aca4825c55ea607, type: 3}
-      propertyPath: playerWithoutController.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5652152906292597838, guid: 6bba93efe72236349aca4825c55ea607, type: 3}
       propertyPath: playerWithoutController.Array.data[0]
       value: 
       objectReference: {fileID: 613665907}

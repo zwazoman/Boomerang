@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class joinDuringGame : MonoBehaviour
 {
@@ -19,8 +18,8 @@ public class joinDuringGame : MonoBehaviour
             PlayerEntering.SetActive(true);
             PlayerEntering.transform.position = spawnPoint[Random.Range(0, spawnPoint.Count)].transform.position;
             return PlayerEntering.GetComponent<Player>();
-
         }
-    return null;
+
+        return null;
     }
 }

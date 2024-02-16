@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class _Start : MonoBehaviour
+public class StartGame : MonoBehaviour
 {
     [SerializeField] private GameObject text1;
     [SerializeField] private GameObject text2;
@@ -11,7 +11,6 @@ public class _Start : MonoBehaviour
     [SerializeField] private AudioSource source;
     [SerializeField] private AudioSource source2;
     [SerializeField] private PlayerInput _playerInput;
-
 
     public void Awake()
     {

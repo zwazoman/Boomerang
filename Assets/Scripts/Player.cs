@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -15,11 +12,10 @@ public class Player : MonoBehaviour
     public GameObject InputPlayerGameObjectClone;
     public GameObject objectWithList;
 
-
     private void Start()
     {
-        Cursor.visible = false; //Afin de cacher le curseur sur pc
-        Cursor.lockState = CursorLockMode.Locked; //Optionnel, bloque la souris au millieu de l'écran
+        Cursor.visible = false; // Afin de cacher le curseur sur pc
+        Cursor.lockState = CursorLockMode.Locked; // Optionnel, bloque la souris au milieu de l'écran
         int objectIndexInLIst = objectWithList.GetComponent<joinDuringGame>().playerWithController.IndexOf(gameObject);
         if (objectIndexInLIst == -1)
         {
@@ -30,20 +26,20 @@ public class Player : MonoBehaviour
             InputPlayerGameObjectClone = objectWithList.GetComponent<joinDuringGame>().InputPlayerList[objectIndexInLIst];
         }
     }
+
     private void Update()
     {
-        OnMove(); //Appelle à chaque frame la fct Update
+        OnMove(); // Appelle à chaque frame la fct OnMove
     }
 
-
-    public void OnMove() //Gère les contrôles du stick droit
+    public void OnMove() // Gère les contrôles du stick droit
     {
         Vector3 mouvement = new Vector3(InputValue.x, 0, InputValue.y);
         mouvement.Normalize();
         transform.position = transform.position + (speed * mouvement * Time.deltaTime);// transform.position car il faut que les contrôles soit basé sur le world Space
     }
 
-    public void Rotation()//Gère les contrôles du stick gauche
+    public void Rotation()// Gère les contrôles du stick gauche
     {
         Vector2 input = _context;
         input.Normalize();

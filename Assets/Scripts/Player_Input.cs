@@ -3,8 +3,7 @@ using UnityEngine.InputSystem;
 
 public class Player_Input : MonoBehaviour
 {
-
-    public Player player;//Référence au Script Player (c'est le PlayerBehaviour)
+    public Player player;// Référence au Script Player (c'est le PlayerBehaviour)
     public PlayerBoomerang boomerangManager;
 
     private void Awake()
@@ -19,6 +18,7 @@ public class Player_Input : MonoBehaviour
         {
             return;
         }
+
         player.InputValue = _context.ReadValue<Vector2>();
     }
 
@@ -33,15 +33,6 @@ public class Player_Input : MonoBehaviour
         player.boomerangManager.ThrowBoomerang();
     }
 
-    public void OnDash(InputAction.CallbackContext _context)
-    {
-        if (_context.started)
-        {
-            //player.OnDash();
-        }
-
-    }
-
     public void FindPlayerWithoutChildInputPlayer()
     {
         foreach (GameObject PlayerWithController in FindAnyObjectByType<joinDuringGame>().playerWithController)
@@ -50,6 +41,7 @@ public class Player_Input : MonoBehaviour
             {
 
             }
+
         }
     }
 }

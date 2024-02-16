@@ -6,6 +6,7 @@ public class RecupBoomerang : MonoBehaviour
     [SerializeField]
     private GameObject prefab_Boomerang;
     public List<GameObject> spawnPoint_Boomerang;
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Boomerang")

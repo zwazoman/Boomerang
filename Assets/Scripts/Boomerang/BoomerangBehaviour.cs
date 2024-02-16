@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BoomerangBehaviour : MonoBehaviour
@@ -17,7 +16,7 @@ public class BoomerangBehaviour : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         fallTime = boomTime * 1.1f; // fall time plus long pour qu'un joueur ne bougeant pas puisse récupérer automatiquement un boomerang lancé au préalable
     }
-    
+
     private IEnumerator Start()
     {
         if (shouldFly)
@@ -38,6 +37,7 @@ public class BoomerangBehaviour : MonoBehaviour
             FallBoomerang();
         }
     }
+
     private void Update()
     {
         // vérifie  si le joueur ayant lancé le boomerang est meure
@@ -58,7 +58,6 @@ public class BoomerangBehaviour : MonoBehaviour
     {
         // lorsque le boomerang touche une objet
         GameObject objetTouche = collision.gameObject;
-        print(objetTouche);
         if (objetTouche.tag == "Player")
         {
             // vérifie si l 'objet est un joueur

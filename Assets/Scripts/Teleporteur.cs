@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Teleporteur : MonoBehaviour
@@ -8,61 +7,46 @@ public class Teleporteur : MonoBehaviour
     private GameObject playerToTp;
     private bool canTp;
     private Vector3 targetTpPos;
+
     private void Awake()
     {
-        //player = GameObject.FindWithTag("Player");
         canTp = true;
         targetTpPos = targetTp.transform.position;
     }
+
     private void OnTriggerEnter(Collider other)
     {
         playerToTp = other.gameObject;
-        Debug.Log("Entrée");
         if (other.gameObject)
         {
             StartCoroutine(TeleportPlayerCoRoutine());
         }
-
     }
 
     IEnumerator TeleportPlayerCoRoutine()
     {
-
-        TeleportPlayer();       
+        TeleportPlayer();
         yield return new WaitForSeconds(3);
         DontTeleportPlayer();
     }
 
-
-  /*  private void OnTriggerExit(Collider other)
-    {
-
-        Debug.Log("Sortie");
-        if (other.gameObject)
+    private void TeleportPlayer()
         {
-            DontTeleportPlayer();
+            if (canTp == true)
+            {
+                targetTp.canTp = false;
+                playerToTp.transform.position = targetTpPos;
+            }
         }
-        playerToTp = null;
-    }*/
-
- private void TeleportPlayer()
-    {
-        
-        if (canTp == true)
-        {
-            targetTp.canTp = false;
-            playerToTp.transform.position = targetTpPos;
-            Debug.Log("tp");
-        }
-    }
 
     private void DontTeleportPlayer()
     {
         if (canTp == false)
         {
-            Debug.Log("Desactivé");
             if (!canTp)
-            canTp = true;
+            {
+                canTp = true;
+            }
         }
     }
 }

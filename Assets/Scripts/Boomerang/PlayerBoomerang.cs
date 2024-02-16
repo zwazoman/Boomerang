@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
-using UnityEngine.SceneManagement;
+using UnityEngine;
+
 public class PlayerBoomerang : MonoBehaviour
 {
     public GameObject boomerang;
@@ -16,7 +13,6 @@ public class PlayerBoomerang : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public GameObject Victory_panel;
     [SerializeField] float boomHeight = 0.5f;
-
 
     private void Start()
     {
@@ -53,6 +49,7 @@ public class PlayerBoomerang : MonoBehaviour
         AudioManager.Instance.PlayCatch(); // joue le son "catchSound"
         hasBoomerang = true;
     }
+
     public void Kill()
     {
         ThrowBoomerang(false); // jette le boomerang au pieds du joueur mourrant

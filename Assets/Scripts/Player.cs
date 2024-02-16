@@ -50,7 +50,9 @@ public class Player : MonoBehaviour
     }
     private void OnDisable()
     {
+        Debug.Log("fdp");
         objectWithList.GetComponent<joinDuringGame>().InputPlayerList.Remove(InputPlayerGameObjectClone);
+        
         Destroy(InputPlayerGameObjectClone);
     }
 

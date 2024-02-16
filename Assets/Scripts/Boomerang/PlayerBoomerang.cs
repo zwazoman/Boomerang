@@ -52,9 +52,9 @@ public class PlayerBoomerang : MonoBehaviour
         ThrowBoomerang(false); // jette le boomerang au pieds du joueur mourrant
         AudioManager.Instance.PlayDie(); // joue le son de mort
         gameObject.SetActive(false);
-        //this.gameObject.GetComponent<Player>()
-        //Destroy(this.gameObject.GetComponent<Player>().objectWithList.GetComponent<joinDuringGame>().InputPlayerList[this.gameObject.GetComponent<Player>().objectWithList.GetComponent<joinDuringGame>().playerWithController.IndexOf(this.gameObject)]);
-        //gameObject.GetComponent<Player>().objectWithList.GetComponent<joinDuringGame>().InputPlayerList[];
+        // this.gameObject.GetComponent<Player>()
+        // Destroy(this.gameObject.GetComponent<Player>().objectWithList.GetComponent<joinDuringGame>().InputPlayerList[this.gameObject.GetComponent<Player>().objectWithList.GetComponent<joinDuringGame>().playerWithController.IndexOf(this.gameObject)]);
+        // gameObject.GetComponent<Player>().objectWithList.GetComponent<joinDuringGame>().InputPlayerList[];
         objectWithPlayersLists.GetComponent<joinDuringGame>().playerWithController.Remove(gameObject);
         objectWithPlayersLists.GetComponent<joinDuringGame>().playerWithoutController.Add(gameObject);
     }

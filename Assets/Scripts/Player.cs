@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
 
     private void OnDisable()
     {
-        objectWithList.GetComponent<joinDuringGame>().InputPlayerList.Remove(this.InputPlayerGameObjectClone);
+        this.objectWithList.GetComponent<joinDuringGame>().InputPlayerList.Remove(this.InputPlayerGameObjectClone);
         Destroy(this.InputPlayerGameObjectClone);
     }
 }

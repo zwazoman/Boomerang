@@ -53,6 +53,13 @@ public class Player : MonoBehaviour
         }
     }
 
+    /* 
+     Explication de notre plus gros problème :
+        Pour faire simple, lorsqu'un gameObject de joueur est appelé pour la deuxième (setActiveTrue) un probleme se crée à la ligne 52 qui nous dit que 
+        l'indexe auquel on essaye d'accéder dans la liste est en dehors de la liste en question, alors que dans l'inspecteur on peut voir que l'indice 
+        est valide, le scripts qui possède la liste nous dis la même chose, mais IMPOSSIBLE de trouver pourquoi ça fait ça...
+     */
+
     private void Update()
     {
         OnMove(); //Appelle à chaque frame la fct Update

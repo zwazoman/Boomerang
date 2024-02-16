@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class PlayerBoomerang : MonoBehaviour
 {
     public GameObject boomerang;
@@ -35,8 +36,7 @@ public class PlayerBoomerang : MonoBehaviour
         print(score); // a retirer
         if (score == 5)
         {
-            // Victoire du joueur actuel 
-            
+            SceneManager.LoadScene("Victory");
         }
     }
 

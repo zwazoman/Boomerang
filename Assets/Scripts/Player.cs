@@ -1,4 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -11,12 +15,33 @@ public class Player : MonoBehaviour
     public PlayerBoomerang boomerangManager;
     public GameObject InputPlayerGameObjectClone;
     public GameObject objectWithList;
+    public bool isFirstTimeEnable = true;
+
 
     private void Start()
     {
-        Cursor.visible = false; // Afin de cacher le curseur sur pc
-        Cursor.lockState = CursorLockMode.Locked; // Optionnel, bloque la souris au milieu de l'écran
+        if (isFirstTimeEnable)
+        {
+            Initialize();
+        }
+        isFirstTimeEnable = false;
+    }
+
+    private void OnEnable()
+    {
+        if (!isFirstTimeEnable)
+        {
+            Initialize();
+        }
+    }
+
+    private void Initialize()
+    {
+        Cursor.visible = false; //Afin de cacher le curseur sur pc
+        Cursor.lockState = CursorLockMode.Locked; //Optionnel, bloque la souris au millieu de l'écran
         int objectIndexInLIst = objectWithList.GetComponent<joinDuringGame>().playerWithController.IndexOf(gameObject);
+        Debug.Log(objectIndexInLIst);
+
         if (objectIndexInLIst == -1)
         {
             Debug.LogError("PROBLEM");
@@ -29,17 +54,18 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        OnMove(); // Appelle à chaque frame la fct OnMove
+        OnMove(); //Appelle à chaque frame la fct Update
     }
 
-    public void OnMove() // Gère les contrôles du stick droit
+
+    public void OnMove() //Gère les contrôles du stick droit
     {
         Vector3 mouvement = new Vector3(InputValue.x, 0, InputValue.y);
         mouvement.Normalize();
         transform.position = transform.position + (speed * mouvement * Time.deltaTime);// transform.position car il faut que les contrôles soit basé sur le world Space
     }
 
-    public void Rotation()// Gère les contrôles du stick gauche
+    public void Rotation()//Gère les contrôles du stick gauche
     {
         Vector2 input = _context;
         input.Normalize();
@@ -54,7 +80,7 @@ public class Player : MonoBehaviour
 
     private void OnDisable()
     {
-        objectWithList.GetComponent<joinDuringGame>().InputPlayerList.Remove(this.InputPlayerGameObjectClone);
+        this.objectWithList.GetComponent<joinDuringGame>().InputPlayerList.Remove(this.InputPlayerGameObjectClone);
         Destroy(this.InputPlayerGameObjectClone);
     }
 }

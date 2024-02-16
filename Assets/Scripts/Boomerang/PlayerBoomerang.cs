@@ -21,7 +21,7 @@ public class PlayerBoomerang : MonoBehaviour
         if (hasBoomerang)
         {
             AudioManager.Instance.PlayThrow();// joue le son throwSound
-            boomerangTMP = Instantiate(boomerang,transform.position + transform.forward * distanceToInstantiate, transform.rotation); // instanciation du boomerang
+            boomerangTMP = Instantiate(boomerang,transform.position + transform.forward * distanceToInstantiate + Vector3.up * 0.5f , transform.rotation); // instanciation du boomerang
             boomScript = boomerangTMP.GetComponent<BoomerangBehaviour>();
             boomScript.thrower = this.gameObject;
             boomScript.shouldFly = _shouldFly; // donne l'information que le boomerang vole ou simplement tombe au sol

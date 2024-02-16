@@ -18,8 +18,9 @@ public class joinDuringGame : MonoBehaviour
             playerWithController.Add(PlayerEntering);
             PlayerEntering.SetActive(true);
             PlayerEntering.transform.position = spawnPoint[Random.Range(0, spawnPoint.Count)].transform.position;
+            PlayerEntering.GetComponent<Player>().objectWithList = this.gameObject;
+            PlayerEntering.GetComponent<PlayerBoomerang>().objectWithPlayersLists = this.gameObject;
             return PlayerEntering.GetComponent<Player>();
-
         }
     return null;
     }

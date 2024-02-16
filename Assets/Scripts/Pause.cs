@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class Pause : MonoBehaviour
 {
     [SerializeField] private PlayerInput _playerInput;
-    [SerializeField] private GameObject panel_pause;
+    [SerializeField] internal GameObject panel_pause;
     public GameObject Pause_button;
 
 

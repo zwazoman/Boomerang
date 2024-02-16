@@ -13,6 +13,6 @@ public class PlayerInputInitializer : MonoBehaviour
 
     private void OnPlayerJoined(PlayerInput obj)
     {
-        obj.GetComponent<Pause>().PanelPause = PausePanel;
+        obj.GetComponent<Pause>().panel_pause = PausePanel;
     }
 }

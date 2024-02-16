@@ -20,23 +20,32 @@ public class Teleporteur : MonoBehaviour
         Debug.Log("Entrée");
         if (other.gameObject)
         {
-            TeleportPlayer();
+            StartCoroutine(TeleportPlayerCoRoutine());
         }
-        
+
     }
 
-    private void OnTriggerExit(Collider other)
+    IEnumerator TeleportPlayerCoRoutine()
     {
-        
+
+        TeleportPlayer();       
+        yield return new WaitForSeconds(3);
+        DontTeleportPlayer();
+    }
+
+
+  /*  private void OnTriggerExit(Collider other)
+    {
+
         Debug.Log("Sortie");
         if (other.gameObject)
-        {       
-            DontTeleportPlayer();   
+        {
+            DontTeleportPlayer();
         }
         playerToTp = null;
-    }
-  
-    private void TeleportPlayer()
+    }*/
+
+ private void TeleportPlayer()
     {
         
         if (canTp == true)

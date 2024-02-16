@@ -6,10 +6,8 @@ public class BoomerangBehaviour : MonoBehaviour
 {
     Rigidbody rb;
     internal GameObject thrower; // le joueur qui ayant lancé le boomerang
-    [SerializeField] 
-    float speed; // vitesse du boomerang a l'allée et au retour
-    [SerializeField] 
-    float boomTime; // temps que mets le boomerang avant d'atteindre son apogée dans un premier temps et sa position initiale (un peu plus loin) dans un second temps
+    [SerializeField] float speed; // vitesse du boomerang a l'allée et au retour
+    [SerializeField] float boomTime; // temps que mets le boomerang avant d'atteindre son apogée dans un premier temps et sa position initiale (un peu plus loin) dans un second temps
     internal bool shouldFly = true; // vérifie si le boomerang doit voler à l'instanciation ou non
     internal bool isFalling = false;
     float fallTime;
@@ -80,9 +78,10 @@ public class BoomerangBehaviour : MonoBehaviour
                 thrower.GetComponent<PlayerBoomerang>().ScoreUp();
             }
         }
-        if(objetTouche.layer == 3 || objetTouche.layer == 7)
+
+        if (objetTouche.layer == 3 || objetTouche.layer == 7)
         {
-            //si l'objet touché est un mur ou un autre boomerang, le boomerang tombe sur le sol
+            // si l'objet touché est un mur ou un autre boomerang, le boomerang tombe sur le sol
             FallBoomerang();
         }
     }
